@@ -1,0 +1,1235 @@
+@prefix bldg: <http://buildgraph.org/BG_strip_mall_2004_0003#> .
+@prefix brick: <https://brickschema.org/schema/Brick#> .
+@prefix meta: <https://buildgraph.org/meta#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ref: <https://brickschema.org/schema/Brick/ref#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+bldg:AHU-L1-01 a brick:AHU ;
+    brick:feeds bldg:VAVB-1-001,
+        bldg:VAVB-1-004,
+        bldg:VAVB-1-008 ;
+    brick:hasPart bldg:DMPR-EX-AHU-L1-01,
+        bldg:SF-AHU-L1-01 ;
+    brick:hasPoint bldg:AHU-L1-01.Discharge_Air_Temperature_Sensor,
+        bldg:AHU-L1-01.Mixed_Air_Temperature_Sensor,
+        bldg:AHU-L1-01.On_Off_Command,
+        bldg:AHU-L1-01.Outside_Air_Flow_Sensor,
+        bldg:AHU-L1-01.Outside_Air_Humidity_Sensor,
+        bldg:AHU-L1-01.Outside_Air_Temperature_Sensor,
+        bldg:AHU-L1-01.Return_Air_Humidity_Sensor,
+        bldg:AHU-L1-01.Return_Air_Temperature_Sensor,
+        bldg:AHU-L1-01.Start_Stop_Command,
+        bldg:AHU-L1-01.Supply_Air_Flow_Sensor,
+        bldg:AHU-L1-01.Supply_Air_Humidity_Sensor,
+        bldg:AHU-L1-01.Supply_Air_Static_Pressure_Sensor,
+        bldg:AHU-L1-01.Supply_Air_Static_Pressure_Setpoint,
+        bldg:AHU-L1-01.Supply_Air_Temperature_Sensor,
+        bldg:AHU-L1-01.Supply_Air_Temperature_Setpoint .
+
+bldg:AHU-L1-02 a brick:AHU ;
+    brick:feeds bldg:VAVB-1-005,
+        bldg:VAVB-1-009,
+        bldg:ZN-L1-02 ;
+    brick:hasPart bldg:SF-AHU-L1-02 ;
+    brick:hasPoint bldg:AHU-L1-02.Discharge_Air_Temperature_Sensor,
+        bldg:AHU-L1-02.Return_Air_Differential_Pressure_Sensor,
+        bldg:AHU-L1-02.Return_Air_Humidity_Sensor,
+        bldg:AHU-L1-02.Start_Stop_Command,
+        bldg:AHU-L1-02.Supply_Air_Static_Pressure_Sensor,
+        bldg:AHU-L1-02.Supply_Air_Temperature_Sensor,
+        bldg:AHU-L1-02.Supply_Air_Temperature_Setpoint .
+
+bldg:AHU-L1-03 a brick:AHU ;
+    brick:feeds bldg:VAVB-1-002,
+        bldg:VAVB-1-006 ;
+    brick:hasPart bldg:SF-AHU-L1-03 ;
+    brick:hasPoint bldg:AHU-L1-03.Mixed_Air_Temperature_Sensor,
+        bldg:AHU-L1-03.On_Off_Command,
+        bldg:AHU-L1-03.Outside_Air_Flow_Sensor,
+        bldg:AHU-L1-03.Outside_Air_Humidity_Sensor,
+        bldg:AHU-L1-03.Outside_Air_Temperature_Sensor,
+        bldg:AHU-L1-03.Return_Air_Differential_Pressure_Sensor,
+        bldg:AHU-L1-03.Return_Air_Flow_Sensor,
+        bldg:AHU-L1-03.Return_Air_Temperature_Sensor,
+        bldg:AHU-L1-03.Supply_Air_Flow_Sensor,
+        bldg:AHU-L1-03.Supply_Air_Static_Pressure_Setpoint,
+        bldg:AHU-L1-03.Supply_Air_Temperature_Sensor,
+        bldg:AHU-L1-03.Supply_Air_Temperature_Setpoint .
+
+bldg:AHU-L1-04 a brick:AHU ;
+    brick:feeds bldg:VAVB-1-003,
+        bldg:VAVB-1-007 ;
+    brick:hasPart bldg:DMPR-E-AHU-L1-04,
+        bldg:DMPR-EX-AHU-L1-04,
+        bldg:SF-AHU-L1-04 ;
+    brick:hasPoint bldg:AHU-L1-04.Discharge_Air_Temperature_Sensor,
+        bldg:AHU-L1-04.Mixed_Air_Temperature_Sensor,
+        bldg:AHU-L1-04.Outside_Air_Flow_Sensor,
+        bldg:AHU-L1-04.Outside_Air_Humidity_Sensor,
+        bldg:AHU-L1-04.Outside_Air_Temperature_Sensor,
+        bldg:AHU-L1-04.Return_Air_Flow_Sensor,
+        bldg:AHU-L1-04.Return_Air_Temperature_Sensor,
+        bldg:AHU-L1-04.Supply_Air_Flow_Sensor,
+        bldg:AHU-L1-04.Supply_Air_Static_Pressure_Sensor,
+        bldg:AHU-L1-04.Supply_Air_Static_Pressure_Setpoint,
+        bldg:AHU-L1-04.Supply_Air_Temperature_Sensor,
+        bldg:AHU-L1-04.Supply_Air_Temperature_Setpoint .
+
+bldg:ElectricMeter a brick:Electrical_Meter ;
+    brick:isPointOf bldg:BG_strip_mall_2004_0003 .
+
+bldg:VFD-SF-AHU-L1-01 a brick:Variable_Frequency_Drive ;
+    brick:controls bldg:SF-AHU-L1-01 .
+
+bldg:VFD-SF-AHU-L1-02 a brick:Variable_Frequency_Drive ;
+    brick:controls bldg:SF-AHU-L1-02 .
+
+bldg:VFD-SF-AHU-L1-03 a brick:Variable_Frequency_Drive ;
+    brick:controls bldg:SF-AHU-L1-03 .
+
+bldg:VFD-SF-AHU-L1-04 a brick:Variable_Frequency_Drive ;
+    brick:controls bldg:SF-AHU-L1-04 .
+
+bldg:AHU-L1-01.Discharge_Air_Temperature_Sensor a brick:Discharge_Air_Temperature_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:758e80be-f4f6-5ba0-b654-a8cf23f85589> .
+
+bldg:AHU-L1-01.Mixed_Air_Temperature_Sensor a brick:Mixed_Air_Temperature_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:3f1e9ede-db72-5900-9bcc-97f763e11339> .
+
+bldg:AHU-L1-01.On_Off_Command a brick:On_Off_Command .
+
+bldg:AHU-L1-01.Outside_Air_Flow_Sensor a brick:Outside_Air_Flow_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:24fd1a42-da51-58c9-a2f2-3ac78dbf3354> .
+
+bldg:AHU-L1-01.Outside_Air_Humidity_Sensor a brick:Outside_Air_Humidity_Sensor .
+
+bldg:AHU-L1-01.Outside_Air_Temperature_Sensor a brick:Outside_Air_Temperature_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:db61562e-2f74-5f46-9741-167ed02437ea> .
+
+bldg:AHU-L1-01.Return_Air_Humidity_Sensor a brick:Return_Air_Humidity_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:fbbe2eff-7743-599d-b1a3-15b74b4195a5> .
+
+bldg:AHU-L1-01.Return_Air_Temperature_Sensor a brick:Return_Air_Temperature_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:a521b823-9026-5997-a211-44d26c5002f5> .
+
+bldg:AHU-L1-01.Start_Stop_Command a brick:Start_Stop_Command ;
+    ref:hasExternalReference <urn:buildgraph:tsref:25e0bf9a-a0ce-5121-917f-907377038ad3> .
+
+bldg:AHU-L1-01.Supply_Air_Flow_Sensor a brick:Supply_Air_Flow_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:8ad4437a-1b2c-58c2-a15d-3e0407235aa5> .
+
+bldg:AHU-L1-01.Supply_Air_Humidity_Sensor a brick:Supply_Air_Humidity_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:4b90ddc7-9cc4-5ee4-8fd7-78a095b7a8dd> .
+
+bldg:AHU-L1-01.Supply_Air_Static_Pressure_Sensor a brick:Supply_Air_Static_Pressure_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:97fffb98-ab67-560d-b7f1-75876ddb7172> .
+
+bldg:AHU-L1-01.Supply_Air_Static_Pressure_Setpoint a brick:Supply_Air_Static_Pressure_Setpoint ;
+    ref:hasExternalReference <urn:buildgraph:tsref:a141d756-b62b-5741-83d6-c61c84c414a1> .
+
+bldg:AHU-L1-01.Supply_Air_Temperature_Sensor a brick:Supply_Air_Temperature_Sensor .
+
+bldg:AHU-L1-01.Supply_Air_Temperature_Setpoint a brick:Supply_Air_Temperature_Setpoint ;
+    ref:hasExternalReference <urn:buildgraph:tsref:23554c74-432c-5984-a487-f3882a8a2576> .
+
+bldg:AHU-L1-02.Discharge_Air_Temperature_Sensor a brick:Discharge_Air_Temperature_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:074ef272-d14b-589a-bb8e-42e3f9b75d5c> .
+
+bldg:AHU-L1-02.Return_Air_Differential_Pressure_Sensor a brick:Return_Air_Differential_Pressure_Sensor .
+
+bldg:AHU-L1-02.Return_Air_Humidity_Sensor a brick:Return_Air_Humidity_Sensor .
+
+bldg:AHU-L1-02.Start_Stop_Command a brick:Start_Stop_Command .
+
+bldg:AHU-L1-02.Supply_Air_Static_Pressure_Sensor a brick:Supply_Air_Static_Pressure_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:ab5a1d6c-330a-5d20-ab18-e6495cd74ab1> .
+
+bldg:AHU-L1-02.Supply_Air_Temperature_Sensor a brick:Supply_Air_Temperature_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:7b80e068-916c-55c8-82a9-4e2358068cc9> .
+
+bldg:AHU-L1-02.Supply_Air_Temperature_Setpoint a brick:Supply_Air_Temperature_Setpoint ;
+    ref:hasExternalReference <urn:buildgraph:tsref:54382525-da79-564d-b879-e84fb94cd3c6> .
+
+bldg:AHU-L1-03.Mixed_Air_Temperature_Sensor a brick:Mixed_Air_Temperature_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:a7d343a2-6623-5ea3-bc88-938bff8bd0af> .
+
+bldg:AHU-L1-03.On_Off_Command a brick:On_Off_Command ;
+    ref:hasExternalReference <urn:buildgraph:tsref:5cb8736c-6b2f-5e38-8c32-71f1aed92c0d> .
+
+bldg:AHU-L1-03.Outside_Air_Flow_Sensor a brick:Outside_Air_Flow_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:890c0398-1956-5854-b0bd-534f0b480adf> .
+
+bldg:AHU-L1-03.Outside_Air_Humidity_Sensor a brick:Outside_Air_Humidity_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:be0a5432-f137-5b0a-822b-0f1a4691e3d1> .
+
+bldg:AHU-L1-03.Outside_Air_Temperature_Sensor a brick:Outside_Air_Temperature_Sensor .
+
+bldg:AHU-L1-03.Return_Air_Differential_Pressure_Sensor a brick:Return_Air_Differential_Pressure_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:1cd00c1e-45c8-5971-8827-5a95e64c43f4> .
+
+bldg:AHU-L1-03.Return_Air_Flow_Sensor a brick:Return_Air_Flow_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:a3e790c1-9fde-5b75-9c57-9f035ff80092> .
+
+bldg:AHU-L1-03.Return_Air_Temperature_Sensor a brick:Return_Air_Temperature_Sensor .
+
+bldg:AHU-L1-03.Supply_Air_Flow_Sensor a brick:Supply_Air_Flow_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:7b0ab648-d74e-5b05-9a41-c02597f51ab3> .
+
+bldg:AHU-L1-03.Supply_Air_Static_Pressure_Setpoint a brick:Supply_Air_Static_Pressure_Setpoint ;
+    ref:hasExternalReference <urn:buildgraph:tsref:7405d237-5384-555f-b417-895defa0ac70> .
+
+bldg:AHU-L1-03.Supply_Air_Temperature_Sensor a brick:Supply_Air_Temperature_Sensor .
+
+bldg:AHU-L1-03.Supply_Air_Temperature_Setpoint a brick:Supply_Air_Temperature_Setpoint ;
+    ref:hasExternalReference <urn:buildgraph:tsref:817e3dd2-0b67-5e43-a8db-1add8612a259> .
+
+bldg:AHU-L1-04.Discharge_Air_Temperature_Sensor a brick:Discharge_Air_Temperature_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:9d765aeb-5bd7-5468-8684-3346a52e12c1> .
+
+bldg:AHU-L1-04.Mixed_Air_Temperature_Sensor a brick:Mixed_Air_Temperature_Sensor .
+
+bldg:AHU-L1-04.Outside_Air_Flow_Sensor a brick:Outside_Air_Flow_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:7d8e4a9a-a137-5cb6-987c-3e0e07c58d6b> .
+
+bldg:AHU-L1-04.Outside_Air_Humidity_Sensor a brick:Outside_Air_Humidity_Sensor .
+
+bldg:AHU-L1-04.Outside_Air_Temperature_Sensor a brick:Outside_Air_Temperature_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:4c0174a0-fdb0-5aca-a3cc-8baf8a914ff5> .
+
+bldg:AHU-L1-04.Return_Air_Flow_Sensor a brick:Return_Air_Flow_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:32afd9f5-2a0b-5b8f-bd84-1afd65df95ac> .
+
+bldg:AHU-L1-04.Return_Air_Temperature_Sensor a brick:Return_Air_Temperature_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:0a5e4af9-6a1d-56fb-9166-39e81ac33573> .
+
+bldg:AHU-L1-04.Supply_Air_Flow_Sensor a brick:Supply_Air_Flow_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:b053dcf7-84c8-5389-980c-382e8ff0e26d> .
+
+bldg:AHU-L1-04.Supply_Air_Static_Pressure_Sensor a brick:Supply_Air_Static_Pressure_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:ef7960c1-ec93-5720-bd8b-e48e0a3d2f2a> .
+
+bldg:AHU-L1-04.Supply_Air_Static_Pressure_Setpoint a brick:Supply_Air_Static_Pressure_Setpoint .
+
+bldg:AHU-L1-04.Supply_Air_Temperature_Sensor a brick:Supply_Air_Temperature_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:53b798bc-5214-5ebb-be3c-937b9b5dcddf> .
+
+bldg:AHU-L1-04.Supply_Air_Temperature_Setpoint a brick:Supply_Air_Temperature_Setpoint .
+
+bldg:BG_strip_mall_2004_0003 a brick:Building ;
+    brick:hasPart bldg:LVL-01 ;
+    meta:buildingType "strip_mall" ;
+    meta:climateZone "4B" ;
+    meta:namingStyle "legacy" ;
+    meta:vintage "ashrae2004" .
+
+bldg:DMPR-E-AHU-L1-04 a brick:Economizer_Damper ;
+    brick:hasPoint bldg:DMPR-E-AHU-L1-04.Damper_Position_Setpoint,
+        bldg:DMPR-E-AHU-L1-04.Outside_Air_Damper_Command,
+        bldg:DMPR-E-AHU-L1-04.Outside_Air_Temperature_Sensor .
+
+bldg:DMPR-E-AHU-L1-04.Damper_Position_Setpoint a brick:Damper_Position_Setpoint ;
+    ref:hasExternalReference <urn:buildgraph:tsref:f0290e0d-30a3-5686-a067-ae7c645deb3f> .
+
+bldg:DMPR-E-AHU-L1-04.Outside_Air_Damper_Command a brick:Outside_Air_Damper_Command ;
+    ref:hasExternalReference <urn:buildgraph:tsref:044fb1de-afca-5303-9d56-fa8ffb2716c8> .
+
+bldg:DMPR-E-AHU-L1-04.Outside_Air_Temperature_Sensor a brick:Outside_Air_Temperature_Sensor .
+
+bldg:DMPR-EX-AHU-L1-01 a brick:Exhaust_Damper .
+
+bldg:DMPR-EX-AHU-L1-04 a brick:Exhaust_Damper .
+
+bldg:LVL-01 a brick:Floor ;
+    brick:hasPart bldg:ZN-L1-01,
+        bldg:ZN-L1-02,
+        bldg:ZN-L1-03,
+        bldg:ZN-L1-04,
+        bldg:ZN-L1-05,
+        bldg:ZN-L1-06,
+        bldg:ZN-L1-07,
+        bldg:ZN-L1-08,
+        bldg:ZN-L1-09,
+        bldg:ZN-L1-10 .
+
+bldg:SF-AHU-L1-01.Fan_Speed_Setpoint a brick:Fan_Speed_Setpoint ;
+    ref:hasExternalReference <urn:buildgraph:tsref:27d5a3fc-1bb7-5561-bf72-3f9be79f7c92> .
+
+bldg:SF-AHU-L1-01.Fan_Status a brick:Fan_Status ;
+    ref:hasExternalReference <urn:buildgraph:tsref:4c97cef7-3867-5467-ae54-3b79ad64cb6c> .
+
+bldg:SF-AHU-L1-01.Output_Frequency_Sensor a brick:Output_Frequency_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:07784ef6-7ce8-5980-9c2d-056b418b764a> .
+
+bldg:SF-AHU-L1-01.Speed_Status a brick:Speed_Status ;
+    ref:hasExternalReference <urn:buildgraph:tsref:3a218b3d-a7d9-54d8-b3b5-0765b121a7dd> .
+
+bldg:SF-AHU-L1-01.Start_Stop_Command a brick:Start_Stop_Command ;
+    ref:hasExternalReference <urn:buildgraph:tsref:e1ae6dd3-87c7-5f6c-8c20-989f55f14148> .
+
+bldg:SF-AHU-L1-02.Fan_Status a brick:Fan_Status ;
+    ref:hasExternalReference <urn:buildgraph:tsref:9e4b4761-608f-5eae-8005-f4c5ff87aceb> .
+
+bldg:SF-AHU-L1-02.Speed_Setpoint a brick:Speed_Setpoint .
+
+bldg:SF-AHU-L1-02.Speed_Status a brick:Speed_Status .
+
+bldg:SF-AHU-L1-02.Start_Stop_Command a brick:Start_Stop_Command ;
+    ref:hasExternalReference <urn:buildgraph:tsref:30bd18a3-334d-5b02-92cf-e2d815984f46> .
+
+bldg:SF-AHU-L1-03.Fan_Speed_Setpoint a brick:Fan_Speed_Setpoint ;
+    ref:hasExternalReference <urn:buildgraph:tsref:b6dd1d1a-461c-5990-b8f3-e5743ab23934> .
+
+bldg:SF-AHU-L1-03.Output_Frequency_Sensor a brick:Output_Frequency_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:6fdc4e41-7eee-55f5-9675-f67afda7229c> .
+
+bldg:SF-AHU-L1-03.Speed_Setpoint a brick:Speed_Setpoint .
+
+bldg:SF-AHU-L1-03.Speed_Status a brick:Speed_Status ;
+    ref:hasExternalReference <urn:buildgraph:tsref:f37be8f6-493b-57fd-be37-b2cc7cc03e61> .
+
+bldg:SF-AHU-L1-03.Start_Stop_Command a brick:Start_Stop_Command ;
+    ref:hasExternalReference <urn:buildgraph:tsref:745c54e0-5161-503f-9b89-1edbb1927703> .
+
+bldg:SF-AHU-L1-03.Static_Pressure_Sensor a brick:Static_Pressure_Sensor .
+
+bldg:SF-AHU-L1-04.Fan_Speed_Setpoint a brick:Fan_Speed_Setpoint ;
+    ref:hasExternalReference <urn:buildgraph:tsref:771714be-e56e-5aeb-b272-88ab7da9191e> .
+
+bldg:SF-AHU-L1-04.Output_Frequency_Sensor a brick:Output_Frequency_Sensor .
+
+bldg:SF-AHU-L1-04.Speed_Setpoint a brick:Speed_Setpoint .
+
+bldg:SF-AHU-L1-04.Speed_Status a brick:Speed_Status ;
+    ref:hasExternalReference <urn:buildgraph:tsref:42f6831d-5efe-5ff1-a1b1-a5ead947aa72> .
+
+bldg:SF-AHU-L1-04.Start_Stop_Command a brick:Start_Stop_Command .
+
+bldg:VAVB-1-001 a brick:VAV ;
+    brick:feeds bldg:ZN-L1-01 ;
+    brick:hasPoint bldg:VAVB-1-001.CO2_Sensor,
+        bldg:VAVB-1-001.Damper_Position_Setpoint,
+        bldg:VAVB-1-001.Discharge_Air_Temperature_Sensor,
+        bldg:VAVB-1-001.Heating_Command,
+        bldg:VAVB-1-001.Supply_Air_Flow_Sensor,
+        bldg:VAVB-1-001.Supply_Air_Temperature_Sensor,
+        bldg:VAVB-1-001.Valve_Command,
+        bldg:VAVB-1-001.Zone_Air_Cooling_Temperature_Setpoint,
+        bldg:VAVB-1-001.Zone_Air_Heating_Temperature_Setpoint,
+        bldg:VAVB-1-001.Zone_Air_Temperature_Sensor,
+        bldg:VAVB-1-001.Zone_Air_Temperature_Setpoint .
+
+bldg:VAVB-1-001.CO2_Sensor a brick:CO2_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:ce2e0173-b987-56e3-ab61-a4f8829a8834> .
+
+bldg:VAVB-1-001.Damper_Position_Setpoint a brick:Damper_Position_Setpoint ;
+    ref:hasExternalReference <urn:buildgraph:tsref:88776365-8450-52bd-b7b3-0ed77692938a> .
+
+bldg:VAVB-1-001.Discharge_Air_Temperature_Sensor a brick:Discharge_Air_Temperature_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:618a17a6-09e2-5ce5-bbf7-84560b782320> .
+
+bldg:VAVB-1-001.Heating_Command a brick:Heating_Command ;
+    ref:hasExternalReference <urn:buildgraph:tsref:23931d80-3a79-5a18-9ca8-7875ed4fcc65> .
+
+bldg:VAVB-1-001.Supply_Air_Flow_Sensor a brick:Supply_Air_Flow_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:32078e1a-824e-58f5-8d48-42dff75a6215> .
+
+bldg:VAVB-1-001.Supply_Air_Temperature_Sensor a brick:Supply_Air_Temperature_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:0bcfbe0a-6a21-55bd-9a30-9a5e9a054b6a> .
+
+bldg:VAVB-1-001.Valve_Command a brick:Valve_Command ;
+    ref:hasExternalReference <urn:buildgraph:tsref:d6ef275d-858c-57f7-a396-cd7b1abf3efe> .
+
+bldg:VAVB-1-001.Zone_Air_Cooling_Temperature_Setpoint a brick:Zone_Air_Cooling_Temperature_Setpoint ;
+    ref:hasExternalReference <urn:buildgraph:tsref:b1cb8ad9-14e3-53e9-8067-0fd096e81885> .
+
+bldg:VAVB-1-001.Zone_Air_Heating_Temperature_Setpoint a brick:Zone_Air_Heating_Temperature_Setpoint ;
+    ref:hasExternalReference <urn:buildgraph:tsref:4ad05832-76f5-5b67-aa24-6514082dc6ee> .
+
+bldg:VAVB-1-001.Zone_Air_Temperature_Sensor a brick:Zone_Air_Temperature_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:1caa4aea-a5ae-5c01-8f96-101e9fd6fd76> .
+
+bldg:VAVB-1-001.Zone_Air_Temperature_Setpoint a brick:Zone_Air_Temperature_Setpoint ;
+    ref:hasExternalReference <urn:buildgraph:tsref:9931852b-8a5e-5645-af92-e78395dce8b1> .
+
+bldg:VAVB-1-002 a brick:VAV ;
+    brick:feeds bldg:ZN-L1-03 ;
+    brick:hasPoint bldg:VAVB-1-002.Damper_Position_Command,
+        bldg:VAVB-1-002.Damper_Position_Setpoint,
+        bldg:VAVB-1-002.Discharge_Air_Temperature_Sensor,
+        bldg:VAVB-1-002.Heating_Command,
+        bldg:VAVB-1-002.Valve_Command,
+        bldg:VAVB-1-002.Zone_Air_Cooling_Temperature_Setpoint,
+        bldg:VAVB-1-002.Zone_Air_Heating_Temperature_Setpoint,
+        bldg:VAVB-1-002.Zone_Air_Temperature_Sensor,
+        bldg:VAVB-1-002.Zone_Air_Temperature_Setpoint .
+
+bldg:VAVB-1-002.Damper_Position_Command a brick:Damper_Position_Command ;
+    ref:hasExternalReference <urn:buildgraph:tsref:9ce6258b-1e50-5fa6-9cbf-470b6ec8659b> .
+
+bldg:VAVB-1-002.Damper_Position_Setpoint a brick:Damper_Position_Setpoint ;
+    ref:hasExternalReference <urn:buildgraph:tsref:95216d77-27e2-5355-9aad-3457fa2fe6c2> .
+
+bldg:VAVB-1-002.Discharge_Air_Temperature_Sensor a brick:Discharge_Air_Temperature_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:0bbad156-a43e-52cc-b2fa-ee94c8ee79eb> .
+
+bldg:VAVB-1-002.Heating_Command a brick:Heating_Command .
+
+bldg:VAVB-1-002.Valve_Command a brick:Valve_Command ;
+    ref:hasExternalReference <urn:buildgraph:tsref:a9240db6-90b9-573a-8aff-166097a4aa4b> .
+
+bldg:VAVB-1-002.Zone_Air_Cooling_Temperature_Setpoint a brick:Zone_Air_Cooling_Temperature_Setpoint .
+
+bldg:VAVB-1-002.Zone_Air_Heating_Temperature_Setpoint a brick:Zone_Air_Heating_Temperature_Setpoint ;
+    ref:hasExternalReference <urn:buildgraph:tsref:ac2cae02-68d9-5bd6-bdd2-0523ffc35ce1> .
+
+bldg:VAVB-1-002.Zone_Air_Temperature_Sensor a brick:Zone_Air_Temperature_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:60c0340f-78fd-539a-8831-2f66174c8d6e> .
+
+bldg:VAVB-1-002.Zone_Air_Temperature_Setpoint a brick:Zone_Air_Temperature_Setpoint ;
+    ref:hasExternalReference <urn:buildgraph:tsref:5bb13e28-5eed-5dc5-bfde-72c8e6182fc9> .
+
+bldg:VAVB-1-003 a brick:VAV ;
+    brick:feeds bldg:ZN-L1-04 ;
+    brick:hasPoint bldg:VAVB-1-003.CO2_Sensor,
+        bldg:VAVB-1-003.Damper_Position_Command,
+        bldg:VAVB-1-003.Damper_Position_Setpoint,
+        bldg:VAVB-1-003.Discharge_Air_Temperature_Sensor,
+        bldg:VAVB-1-003.Supply_Air_Flow_Sensor,
+        bldg:VAVB-1-003.Supply_Air_Temperature_Sensor,
+        bldg:VAVB-1-003.Zone_Air_Cooling_Temperature_Setpoint,
+        bldg:VAVB-1-003.Zone_Air_Temperature_Sensor .
+
+bldg:VAVB-1-003.CO2_Sensor a brick:CO2_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:56fc9174-a2fe-5f6b-af6f-bf4a036e2afb> .
+
+bldg:VAVB-1-003.Damper_Position_Command a brick:Damper_Position_Command ;
+    ref:hasExternalReference <urn:buildgraph:tsref:0a1be541-6036-5448-8078-80ff312319be> .
+
+bldg:VAVB-1-003.Damper_Position_Setpoint a brick:Damper_Position_Setpoint ;
+    ref:hasExternalReference <urn:buildgraph:tsref:d2e7fafc-74de-59fc-a8a8-1a3ee8107d4c> .
+
+bldg:VAVB-1-003.Discharge_Air_Temperature_Sensor a brick:Discharge_Air_Temperature_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:6902c095-6fa2-52e4-b692-afa3090c0229> .
+
+bldg:VAVB-1-003.Supply_Air_Flow_Sensor a brick:Supply_Air_Flow_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:458dddef-16f9-59e3-a985-d8f8cdeb4ca0> .
+
+bldg:VAVB-1-003.Supply_Air_Temperature_Sensor a brick:Supply_Air_Temperature_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:57ca595a-15e0-531e-999e-d9677ce068f9> .
+
+bldg:VAVB-1-003.Zone_Air_Cooling_Temperature_Setpoint a brick:Zone_Air_Cooling_Temperature_Setpoint ;
+    ref:hasExternalReference <urn:buildgraph:tsref:fe60c82a-a81f-5cea-8570-474600f5621d> .
+
+bldg:VAVB-1-003.Zone_Air_Temperature_Sensor a brick:Zone_Air_Temperature_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:ef6b0b60-79a7-5d8b-905b-6a3de98fb513> .
+
+bldg:VAVB-1-004 a brick:VAV ;
+    brick:feeds bldg:ZN-L1-05 ;
+    brick:hasPoint bldg:VAVB-1-004.Damper_Position_Command,
+        bldg:VAVB-1-004.Damper_Position_Setpoint,
+        bldg:VAVB-1-004.Discharge_Air_Temperature_Sensor,
+        bldg:VAVB-1-004.Supply_Air_Flow_Sensor,
+        bldg:VAVB-1-004.Zone_Air_Heating_Temperature_Setpoint,
+        bldg:VAVB-1-004.Zone_Air_Temperature_Setpoint .
+
+bldg:VAVB-1-004.Damper_Position_Command a brick:Damper_Position_Command ;
+    ref:hasExternalReference <urn:buildgraph:tsref:ccdd33df-646b-5bb1-8b74-ae90393b4710> .
+
+bldg:VAVB-1-004.Damper_Position_Setpoint a brick:Damper_Position_Setpoint .
+
+bldg:VAVB-1-004.Discharge_Air_Temperature_Sensor a brick:Discharge_Air_Temperature_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:fa40d576-c639-598c-90ef-e0d9242b3f7d> .
+
+bldg:VAVB-1-004.Supply_Air_Flow_Sensor a brick:Supply_Air_Flow_Sensor .
+
+bldg:VAVB-1-004.Zone_Air_Heating_Temperature_Setpoint a brick:Zone_Air_Heating_Temperature_Setpoint ;
+    ref:hasExternalReference <urn:buildgraph:tsref:4b8432a1-5097-55f0-b77e-74e78f08b6e2> .
+
+bldg:VAVB-1-004.Zone_Air_Temperature_Setpoint a brick:Zone_Air_Temperature_Setpoint ;
+    ref:hasExternalReference <urn:buildgraph:tsref:62f6d5b9-d32d-5451-aa0e-1809ad3fd459> .
+
+bldg:VAVB-1-005 a brick:VAV ;
+    brick:feeds bldg:ZN-L1-06 ;
+    brick:hasPoint bldg:VAVB-1-005.Supply_Air_Flow_Sensor,
+        bldg:VAVB-1-005.Zone_Air_Cooling_Temperature_Setpoint,
+        bldg:VAVB-1-005.Zone_Air_Heating_Temperature_Setpoint,
+        bldg:VAVB-1-005.Zone_Air_Temperature_Sensor,
+        bldg:VAVB-1-005.Zone_Air_Temperature_Setpoint .
+
+bldg:VAVB-1-005.Supply_Air_Flow_Sensor a brick:Supply_Air_Flow_Sensor .
+
+bldg:VAVB-1-005.Zone_Air_Cooling_Temperature_Setpoint a brick:Zone_Air_Cooling_Temperature_Setpoint ;
+    ref:hasExternalReference <urn:buildgraph:tsref:31828579-5250-566e-864b-b42b09a6ccf4> .
+
+bldg:VAVB-1-005.Zone_Air_Heating_Temperature_Setpoint a brick:Zone_Air_Heating_Temperature_Setpoint ;
+    ref:hasExternalReference <urn:buildgraph:tsref:d6f656ce-cdd8-5d39-a644-ecd78a7e0f6c> .
+
+bldg:VAVB-1-005.Zone_Air_Temperature_Sensor a brick:Zone_Air_Temperature_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:b9fc0897-9d36-5b78-a7b6-69bff6fd336f> .
+
+bldg:VAVB-1-005.Zone_Air_Temperature_Setpoint a brick:Zone_Air_Temperature_Setpoint .
+
+bldg:VAVB-1-006 a brick:VAV ;
+    brick:feeds bldg:ZN-L1-07 ;
+    brick:hasPoint bldg:VAVB-1-006.Damper_Position_Setpoint,
+        bldg:VAVB-1-006.Discharge_Air_Temperature_Sensor,
+        bldg:VAVB-1-006.Heating_Command,
+        bldg:VAVB-1-006.Supply_Air_Flow_Sensor,
+        bldg:VAVB-1-006.Valve_Command,
+        bldg:VAVB-1-006.Zone_Air_Cooling_Temperature_Setpoint,
+        bldg:VAVB-1-006.Zone_Air_Heating_Temperature_Setpoint,
+        bldg:VAVB-1-006.Zone_Air_Temperature_Sensor,
+        bldg:VAVB-1-006.Zone_Air_Temperature_Setpoint .
+
+bldg:VAVB-1-006.Damper_Position_Setpoint a brick:Damper_Position_Setpoint ;
+    ref:hasExternalReference <urn:buildgraph:tsref:0e924c2e-4e9f-5cc2-8be5-479273c0f38a> .
+
+bldg:VAVB-1-006.Discharge_Air_Temperature_Sensor a brick:Discharge_Air_Temperature_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:135481f2-2201-5827-94e0-74415232646a> .
+
+bldg:VAVB-1-006.Heating_Command a brick:Heating_Command .
+
+bldg:VAVB-1-006.Supply_Air_Flow_Sensor a brick:Supply_Air_Flow_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:1c4b1db9-c9b6-5f36-9b31-84ce8f9d82da> .
+
+bldg:VAVB-1-006.Valve_Command a brick:Valve_Command ;
+    ref:hasExternalReference <urn:buildgraph:tsref:bee91d03-528f-55d4-8048-1b5730225175> .
+
+bldg:VAVB-1-006.Zone_Air_Cooling_Temperature_Setpoint a brick:Zone_Air_Cooling_Temperature_Setpoint ;
+    ref:hasExternalReference <urn:buildgraph:tsref:18123f6c-8f4f-5da2-8be0-51eb8c52003e> .
+
+bldg:VAVB-1-006.Zone_Air_Heating_Temperature_Setpoint a brick:Zone_Air_Heating_Temperature_Setpoint ;
+    ref:hasExternalReference <urn:buildgraph:tsref:020ebede-100e-52c4-84a6-62882763fcde> .
+
+bldg:VAVB-1-006.Zone_Air_Temperature_Sensor a brick:Zone_Air_Temperature_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:da696a6b-3703-5d7c-944b-ad9073aed8e8> .
+
+bldg:VAVB-1-006.Zone_Air_Temperature_Setpoint a brick:Zone_Air_Temperature_Setpoint .
+
+bldg:VAVB-1-007 a brick:VAV ;
+    brick:feeds bldg:ZN-L1-08 ;
+    brick:hasPoint bldg:VAVB-1-007.Damper_Position_Command,
+        bldg:VAVB-1-007.Damper_Position_Setpoint,
+        bldg:VAVB-1-007.Heating_Command,
+        bldg:VAVB-1-007.Occupancy_Sensor,
+        bldg:VAVB-1-007.Supply_Air_Flow_Sensor,
+        bldg:VAVB-1-007.Supply_Air_Temperature_Sensor,
+        bldg:VAVB-1-007.Zone_Air_Cooling_Temperature_Setpoint,
+        bldg:VAVB-1-007.Zone_Air_Heating_Temperature_Setpoint,
+        bldg:VAVB-1-007.Zone_Air_Temperature_Sensor .
+
+bldg:VAVB-1-007.Damper_Position_Command a brick:Damper_Position_Command .
+
+bldg:VAVB-1-007.Damper_Position_Setpoint a brick:Damper_Position_Setpoint ;
+    ref:hasExternalReference <urn:buildgraph:tsref:5e71bde7-7d3b-5b8e-995c-dac9d8707b98> .
+
+bldg:VAVB-1-007.Heating_Command a brick:Heating_Command ;
+    ref:hasExternalReference <urn:buildgraph:tsref:34410ab4-7426-53f7-bafa-d1d577c78063> .
+
+bldg:VAVB-1-007.Occupancy_Sensor a brick:Occupancy_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:caa254bd-26bd-547b-b4f2-04e3ced5bdd8> .
+
+bldg:VAVB-1-007.Supply_Air_Flow_Sensor a brick:Supply_Air_Flow_Sensor .
+
+bldg:VAVB-1-007.Supply_Air_Temperature_Sensor a brick:Supply_Air_Temperature_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:81f900c5-8958-5233-9f8a-562cea483ece> .
+
+bldg:VAVB-1-007.Zone_Air_Cooling_Temperature_Setpoint a brick:Zone_Air_Cooling_Temperature_Setpoint ;
+    ref:hasExternalReference <urn:buildgraph:tsref:7fee0484-69ac-554e-b00a-4728126b92c3> .
+
+bldg:VAVB-1-007.Zone_Air_Heating_Temperature_Setpoint a brick:Zone_Air_Heating_Temperature_Setpoint ;
+    ref:hasExternalReference <urn:buildgraph:tsref:e044ff60-0e87-51d1-b2d0-44811081fed1> .
+
+bldg:VAVB-1-007.Zone_Air_Temperature_Sensor a brick:Zone_Air_Temperature_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:aaf487eb-76d6-5874-83b2-74b7e3933b23> .
+
+bldg:VAVB-1-008 a brick:VAV ;
+    brick:feeds bldg:ZN-L1-09 ;
+    brick:hasPoint bldg:VAVB-1-008.Damper_Position_Command,
+        bldg:VAVB-1-008.Damper_Position_Setpoint,
+        bldg:VAVB-1-008.Valve_Command,
+        bldg:VAVB-1-008.Zone_Air_Cooling_Temperature_Setpoint,
+        bldg:VAVB-1-008.Zone_Air_Temperature_Sensor,
+        bldg:VAVB-1-008.Zone_Air_Temperature_Setpoint .
+
+bldg:VAVB-1-008.Damper_Position_Command a brick:Damper_Position_Command ;
+    ref:hasExternalReference <urn:buildgraph:tsref:4d446468-492d-5dac-98b9-0f679db848c4> .
+
+bldg:VAVB-1-008.Damper_Position_Setpoint a brick:Damper_Position_Setpoint ;
+    ref:hasExternalReference <urn:buildgraph:tsref:5f3e0e97-a145-59e5-81b3-b7622bf56391> .
+
+bldg:VAVB-1-008.Valve_Command a brick:Valve_Command ;
+    ref:hasExternalReference <urn:buildgraph:tsref:ad1c5cb0-9318-5cc0-b896-46cb8ed628d5> .
+
+bldg:VAVB-1-008.Zone_Air_Cooling_Temperature_Setpoint a brick:Zone_Air_Cooling_Temperature_Setpoint ;
+    ref:hasExternalReference <urn:buildgraph:tsref:b22df2ca-05d8-543f-900b-d2f43aa0a9d1> .
+
+bldg:VAVB-1-008.Zone_Air_Temperature_Sensor a brick:Zone_Air_Temperature_Sensor .
+
+bldg:VAVB-1-008.Zone_Air_Temperature_Setpoint a brick:Zone_Air_Temperature_Setpoint ;
+    ref:hasExternalReference <urn:buildgraph:tsref:c59a4895-49b0-5abe-b44e-3c434ccff061> .
+
+bldg:VAVB-1-009 a brick:VAV ;
+    brick:feeds bldg:ZN-L1-10 ;
+    brick:hasPoint bldg:VAVB-1-009.CO2_Sensor,
+        bldg:VAVB-1-009.Damper_Position_Command,
+        bldg:VAVB-1-009.Damper_Position_Setpoint,
+        bldg:VAVB-1-009.Heating_Command,
+        bldg:VAVB-1-009.Supply_Air_Flow_Sensor,
+        bldg:VAVB-1-009.Valve_Command,
+        bldg:VAVB-1-009.Zone_Air_Cooling_Temperature_Setpoint,
+        bldg:VAVB-1-009.Zone_Air_Heating_Temperature_Setpoint,
+        bldg:VAVB-1-009.Zone_Air_Temperature_Sensor .
+
+bldg:VAVB-1-009.CO2_Sensor a brick:CO2_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:bd2553ee-2fb8-5985-89ae-851e8ea0363d> .
+
+bldg:VAVB-1-009.Damper_Position_Command a brick:Damper_Position_Command ;
+    ref:hasExternalReference <urn:buildgraph:tsref:5a8c0b1a-bcfa-53c1-9189-fe8242b12469> .
+
+bldg:VAVB-1-009.Damper_Position_Setpoint a brick:Damper_Position_Setpoint ;
+    ref:hasExternalReference <urn:buildgraph:tsref:6acf6d4f-f9d5-5739-872e-ce6a8fa13010> .
+
+bldg:VAVB-1-009.Heating_Command a brick:Heating_Command ;
+    ref:hasExternalReference <urn:buildgraph:tsref:d3d2f87d-3ae1-581a-92d5-448477f6893e> .
+
+bldg:VAVB-1-009.Supply_Air_Flow_Sensor a brick:Supply_Air_Flow_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:02b701f5-364e-5539-997c-e29d37855cc1> .
+
+bldg:VAVB-1-009.Valve_Command a brick:Valve_Command ;
+    ref:hasExternalReference <urn:buildgraph:tsref:7055c48e-d131-5249-a8a7-15aad2fc1d88> .
+
+bldg:VAVB-1-009.Zone_Air_Cooling_Temperature_Setpoint a brick:Zone_Air_Cooling_Temperature_Setpoint ;
+    ref:hasExternalReference <urn:buildgraph:tsref:e3ef534f-fd9b-513a-aaa1-7e1e305c1d25> .
+
+bldg:VAVB-1-009.Zone_Air_Heating_Temperature_Setpoint a brick:Zone_Air_Heating_Temperature_Setpoint ;
+    ref:hasExternalReference <urn:buildgraph:tsref:e4583340-f25b-5ecb-9e46-7fbbffde4575> .
+
+bldg:VAVB-1-009.Zone_Air_Temperature_Sensor a brick:Zone_Air_Temperature_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:aedf0f2c-1d03-5064-9694-9e10aac5bac3> .
+
+bldg:ZN-L1-01.Zone_Air_Cooling_Temperature_Setpoint a brick:Zone_Air_Cooling_Temperature_Setpoint ;
+    ref:hasExternalReference <urn:buildgraph:tsref:b630367e-e444-5384-9eb4-f485934eb705> .
+
+bldg:ZN-L1-01.Zone_Air_Heating_Temperature_Setpoint a brick:Zone_Air_Heating_Temperature_Setpoint ;
+    ref:hasExternalReference <urn:buildgraph:tsref:f7dc76c8-850d-5fbf-939a-7a502a99536f> .
+
+bldg:ZN-L1-01.Zone_Air_Temperature_Sensor a brick:Zone_Air_Temperature_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:3e1f07ac-2e5d-554a-b5d5-a1e34afc3865> .
+
+bldg:ZN-L1-02.Zone_Air_Cooling_Temperature_Setpoint a brick:Zone_Air_Cooling_Temperature_Setpoint ;
+    ref:hasExternalReference <urn:buildgraph:tsref:1d1e6784-626e-5ddc-aad6-b6ffa0769cc5> .
+
+bldg:ZN-L1-02.Zone_Air_Heating_Temperature_Setpoint a brick:Zone_Air_Heating_Temperature_Setpoint ;
+    ref:hasExternalReference <urn:buildgraph:tsref:972e2c6e-0cd2-5a55-a4bf-8e8f09c057a9> .
+
+bldg:ZN-L1-02.Zone_Air_Temperature_Sensor a brick:Zone_Air_Temperature_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:7d1dee3b-216d-5236-8dc0-7d7f87b306d7> .
+
+bldg:ZN-L1-03.Occupancy_Sensor a brick:Occupancy_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:f20513e0-ebb4-5e00-8dee-ba3a99ae3933> .
+
+bldg:ZN-L1-03.Zone_Air_Cooling_Temperature_Setpoint a brick:Zone_Air_Cooling_Temperature_Setpoint ;
+    ref:hasExternalReference <urn:buildgraph:tsref:ab591833-2f76-5e86-8abd-8b5b3e1d9d8c> .
+
+bldg:ZN-L1-03.Zone_Air_Heating_Temperature_Setpoint a brick:Zone_Air_Heating_Temperature_Setpoint .
+
+bldg:ZN-L1-03.Zone_Air_Temperature_Sensor a brick:Zone_Air_Temperature_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:cc8afd9f-a329-5206-bc97-dcba23721dc6> .
+
+bldg:ZN-L1-04.Zone_Air_Cooling_Temperature_Setpoint a brick:Zone_Air_Cooling_Temperature_Setpoint ;
+    ref:hasExternalReference <urn:buildgraph:tsref:e89139d1-f3cf-536d-8423-d6a47f922b7a> .
+
+bldg:ZN-L1-04.Zone_Air_Temperature_Sensor a brick:Zone_Air_Temperature_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:bc4b5108-9a30-5bbe-a32b-19a22c08f8c5> .
+
+bldg:ZN-L1-05.Zone_Air_Heating_Temperature_Setpoint a brick:Zone_Air_Heating_Temperature_Setpoint ;
+    ref:hasExternalReference <urn:buildgraph:tsref:d2b2d42f-a595-5722-bdfb-3c5bc378c3ed> .
+
+bldg:ZN-L1-05.Zone_Air_Temperature_Sensor a brick:Zone_Air_Temperature_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:26d76b21-b06d-564f-88f4-2565f15eb4fc> .
+
+bldg:ZN-L1-06.CO2_Sensor a brick:CO2_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:555ff132-8fcb-5777-b87e-24e605ee91ab> .
+
+bldg:ZN-L1-06.Zone_Air_Cooling_Temperature_Setpoint a brick:Zone_Air_Cooling_Temperature_Setpoint ;
+    ref:hasExternalReference <urn:buildgraph:tsref:87488167-84f6-513a-8ba8-9173383f9c65> .
+
+bldg:ZN-L1-06.Zone_Air_Heating_Temperature_Setpoint a brick:Zone_Air_Heating_Temperature_Setpoint ;
+    ref:hasExternalReference <urn:buildgraph:tsref:1823dfa7-5ada-5f0f-b0f4-f972bdbc1bbd> .
+
+bldg:ZN-L1-06.Zone_Air_Temperature_Sensor a brick:Zone_Air_Temperature_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:724f0055-d300-5b9c-8a30-773d4435ae86> .
+
+bldg:ZN-L1-07.CO2_Sensor a brick:CO2_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:c1837a17-704a-59d6-acf8-09db08df4767> .
+
+bldg:ZN-L1-07.Zone_Air_Cooling_Temperature_Setpoint a brick:Zone_Air_Cooling_Temperature_Setpoint ;
+    ref:hasExternalReference <urn:buildgraph:tsref:fb4bc25d-63ca-5385-a9b2-aa62793f1e7a> .
+
+bldg:ZN-L1-07.Zone_Air_Heating_Temperature_Setpoint a brick:Zone_Air_Heating_Temperature_Setpoint ;
+    ref:hasExternalReference <urn:buildgraph:tsref:851c22bf-a1d8-56bc-b2f3-36c0e54a5ee1> .
+
+bldg:ZN-L1-07.Zone_Air_Temperature_Sensor a brick:Zone_Air_Temperature_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:620f9a1e-43c3-56a7-aec9-eab0813ea6ce> .
+
+bldg:ZN-L1-08.Air_Quality_Sensor a brick:Air_Quality_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:2a12daaf-d865-5628-ba9f-b7fc5d6b0b3a> .
+
+bldg:ZN-L1-08.Occupancy_Sensor a brick:Occupancy_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:24c7a50b-a12e-5546-b8a5-d95e8270ddeb> .
+
+bldg:ZN-L1-08.Zone_Air_Cooling_Temperature_Setpoint a brick:Zone_Air_Cooling_Temperature_Setpoint ;
+    ref:hasExternalReference <urn:buildgraph:tsref:af8aece0-076e-5997-bf0e-67b465707b22> .
+
+bldg:ZN-L1-08.Zone_Air_Heating_Temperature_Setpoint a brick:Zone_Air_Heating_Temperature_Setpoint ;
+    ref:hasExternalReference <urn:buildgraph:tsref:fc882c0b-d6e7-58a9-9de0-a06db617d754> .
+
+bldg:ZN-L1-08.Zone_Air_Temperature_Sensor a brick:Zone_Air_Temperature_Sensor .
+
+bldg:ZN-L1-09.Air_Quality_Sensor a brick:Air_Quality_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:0bbd6809-656a-52fd-9b5b-f23518d2befc> .
+
+bldg:ZN-L1-09.Zone_Air_Temperature_Sensor a brick:Zone_Air_Temperature_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:57a63e73-76e9-55a2-8c42-45b2462fd343> .
+
+bldg:ZN-L1-10.Zone_Air_Cooling_Temperature_Setpoint a brick:Zone_Air_Cooling_Temperature_Setpoint ;
+    ref:hasExternalReference <urn:buildgraph:tsref:8b5f5ff1-6311-56e2-be91-76f770041216> .
+
+bldg:ZN-L1-10.Zone_Air_Temperature_Sensor a brick:Zone_Air_Temperature_Sensor ;
+    ref:hasExternalReference <urn:buildgraph:tsref:8810f7e1-8132-56c4-8f4c-4d82dff9d9d3> .
+
+<urn:buildgraph:tsref:020ebede-100e-52c4-84a6-62882763fcde> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "020ebede-100e-52c4-84a6-62882763fcde" .
+
+<urn:buildgraph:tsref:02b701f5-364e-5539-997c-e29d37855cc1> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "02b701f5-364e-5539-997c-e29d37855cc1" .
+
+<urn:buildgraph:tsref:044fb1de-afca-5303-9d56-fa8ffb2716c8> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "044fb1de-afca-5303-9d56-fa8ffb2716c8" .
+
+<urn:buildgraph:tsref:074ef272-d14b-589a-bb8e-42e3f9b75d5c> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "074ef272-d14b-589a-bb8e-42e3f9b75d5c" .
+
+<urn:buildgraph:tsref:07784ef6-7ce8-5980-9c2d-056b418b764a> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "07784ef6-7ce8-5980-9c2d-056b418b764a" .
+
+<urn:buildgraph:tsref:0a1be541-6036-5448-8078-80ff312319be> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "0a1be541-6036-5448-8078-80ff312319be" .
+
+<urn:buildgraph:tsref:0a5e4af9-6a1d-56fb-9166-39e81ac33573> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "0a5e4af9-6a1d-56fb-9166-39e81ac33573" .
+
+<urn:buildgraph:tsref:0bbad156-a43e-52cc-b2fa-ee94c8ee79eb> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "0bbad156-a43e-52cc-b2fa-ee94c8ee79eb" .
+
+<urn:buildgraph:tsref:0bbd6809-656a-52fd-9b5b-f23518d2befc> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "0bbd6809-656a-52fd-9b5b-f23518d2befc" .
+
+<urn:buildgraph:tsref:0bcfbe0a-6a21-55bd-9a30-9a5e9a054b6a> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "0bcfbe0a-6a21-55bd-9a30-9a5e9a054b6a" .
+
+<urn:buildgraph:tsref:0e924c2e-4e9f-5cc2-8be5-479273c0f38a> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "0e924c2e-4e9f-5cc2-8be5-479273c0f38a" .
+
+<urn:buildgraph:tsref:135481f2-2201-5827-94e0-74415232646a> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "135481f2-2201-5827-94e0-74415232646a" .
+
+<urn:buildgraph:tsref:18123f6c-8f4f-5da2-8be0-51eb8c52003e> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "18123f6c-8f4f-5da2-8be0-51eb8c52003e" .
+
+<urn:buildgraph:tsref:1823dfa7-5ada-5f0f-b0f4-f972bdbc1bbd> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "1823dfa7-5ada-5f0f-b0f4-f972bdbc1bbd" .
+
+<urn:buildgraph:tsref:1c4b1db9-c9b6-5f36-9b31-84ce8f9d82da> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "1c4b1db9-c9b6-5f36-9b31-84ce8f9d82da" .
+
+<urn:buildgraph:tsref:1caa4aea-a5ae-5c01-8f96-101e9fd6fd76> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "1caa4aea-a5ae-5c01-8f96-101e9fd6fd76" .
+
+<urn:buildgraph:tsref:1cd00c1e-45c8-5971-8827-5a95e64c43f4> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "1cd00c1e-45c8-5971-8827-5a95e64c43f4" .
+
+<urn:buildgraph:tsref:1d1e6784-626e-5ddc-aad6-b6ffa0769cc5> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "1d1e6784-626e-5ddc-aad6-b6ffa0769cc5" .
+
+<urn:buildgraph:tsref:23554c74-432c-5984-a487-f3882a8a2576> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "23554c74-432c-5984-a487-f3882a8a2576" .
+
+<urn:buildgraph:tsref:23931d80-3a79-5a18-9ca8-7875ed4fcc65> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "23931d80-3a79-5a18-9ca8-7875ed4fcc65" .
+
+<urn:buildgraph:tsref:24c7a50b-a12e-5546-b8a5-d95e8270ddeb> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "24c7a50b-a12e-5546-b8a5-d95e8270ddeb" .
+
+<urn:buildgraph:tsref:24fd1a42-da51-58c9-a2f2-3ac78dbf3354> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "24fd1a42-da51-58c9-a2f2-3ac78dbf3354" .
+
+<urn:buildgraph:tsref:25e0bf9a-a0ce-5121-917f-907377038ad3> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "25e0bf9a-a0ce-5121-917f-907377038ad3" .
+
+<urn:buildgraph:tsref:26d76b21-b06d-564f-88f4-2565f15eb4fc> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "26d76b21-b06d-564f-88f4-2565f15eb4fc" .
+
+<urn:buildgraph:tsref:27d5a3fc-1bb7-5561-bf72-3f9be79f7c92> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "27d5a3fc-1bb7-5561-bf72-3f9be79f7c92" .
+
+<urn:buildgraph:tsref:2a12daaf-d865-5628-ba9f-b7fc5d6b0b3a> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "2a12daaf-d865-5628-ba9f-b7fc5d6b0b3a" .
+
+<urn:buildgraph:tsref:30bd18a3-334d-5b02-92cf-e2d815984f46> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "30bd18a3-334d-5b02-92cf-e2d815984f46" .
+
+<urn:buildgraph:tsref:31828579-5250-566e-864b-b42b09a6ccf4> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "31828579-5250-566e-864b-b42b09a6ccf4" .
+
+<urn:buildgraph:tsref:32078e1a-824e-58f5-8d48-42dff75a6215> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "32078e1a-824e-58f5-8d48-42dff75a6215" .
+
+<urn:buildgraph:tsref:32afd9f5-2a0b-5b8f-bd84-1afd65df95ac> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "32afd9f5-2a0b-5b8f-bd84-1afd65df95ac" .
+
+<urn:buildgraph:tsref:34410ab4-7426-53f7-bafa-d1d577c78063> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "34410ab4-7426-53f7-bafa-d1d577c78063" .
+
+<urn:buildgraph:tsref:3a218b3d-a7d9-54d8-b3b5-0765b121a7dd> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "3a218b3d-a7d9-54d8-b3b5-0765b121a7dd" .
+
+<urn:buildgraph:tsref:3e1f07ac-2e5d-554a-b5d5-a1e34afc3865> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "3e1f07ac-2e5d-554a-b5d5-a1e34afc3865" .
+
+<urn:buildgraph:tsref:3f1e9ede-db72-5900-9bcc-97f763e11339> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "3f1e9ede-db72-5900-9bcc-97f763e11339" .
+
+<urn:buildgraph:tsref:42f6831d-5efe-5ff1-a1b1-a5ead947aa72> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "42f6831d-5efe-5ff1-a1b1-a5ead947aa72" .
+
+<urn:buildgraph:tsref:458dddef-16f9-59e3-a985-d8f8cdeb4ca0> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "458dddef-16f9-59e3-a985-d8f8cdeb4ca0" .
+
+<urn:buildgraph:tsref:4ad05832-76f5-5b67-aa24-6514082dc6ee> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "4ad05832-76f5-5b67-aa24-6514082dc6ee" .
+
+<urn:buildgraph:tsref:4b8432a1-5097-55f0-b77e-74e78f08b6e2> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "4b8432a1-5097-55f0-b77e-74e78f08b6e2" .
+
+<urn:buildgraph:tsref:4b90ddc7-9cc4-5ee4-8fd7-78a095b7a8dd> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "4b90ddc7-9cc4-5ee4-8fd7-78a095b7a8dd" .
+
+<urn:buildgraph:tsref:4c0174a0-fdb0-5aca-a3cc-8baf8a914ff5> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "4c0174a0-fdb0-5aca-a3cc-8baf8a914ff5" .
+
+<urn:buildgraph:tsref:4c97cef7-3867-5467-ae54-3b79ad64cb6c> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "4c97cef7-3867-5467-ae54-3b79ad64cb6c" .
+
+<urn:buildgraph:tsref:4d446468-492d-5dac-98b9-0f679db848c4> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "4d446468-492d-5dac-98b9-0f679db848c4" .
+
+<urn:buildgraph:tsref:53b798bc-5214-5ebb-be3c-937b9b5dcddf> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "53b798bc-5214-5ebb-be3c-937b9b5dcddf" .
+
+<urn:buildgraph:tsref:54382525-da79-564d-b879-e84fb94cd3c6> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "54382525-da79-564d-b879-e84fb94cd3c6" .
+
+<urn:buildgraph:tsref:555ff132-8fcb-5777-b87e-24e605ee91ab> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "555ff132-8fcb-5777-b87e-24e605ee91ab" .
+
+<urn:buildgraph:tsref:56fc9174-a2fe-5f6b-af6f-bf4a036e2afb> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "56fc9174-a2fe-5f6b-af6f-bf4a036e2afb" .
+
+<urn:buildgraph:tsref:57a63e73-76e9-55a2-8c42-45b2462fd343> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "57a63e73-76e9-55a2-8c42-45b2462fd343" .
+
+<urn:buildgraph:tsref:57ca595a-15e0-531e-999e-d9677ce068f9> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "57ca595a-15e0-531e-999e-d9677ce068f9" .
+
+<urn:buildgraph:tsref:5a8c0b1a-bcfa-53c1-9189-fe8242b12469> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "5a8c0b1a-bcfa-53c1-9189-fe8242b12469" .
+
+<urn:buildgraph:tsref:5bb13e28-5eed-5dc5-bfde-72c8e6182fc9> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "5bb13e28-5eed-5dc5-bfde-72c8e6182fc9" .
+
+<urn:buildgraph:tsref:5cb8736c-6b2f-5e38-8c32-71f1aed92c0d> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "5cb8736c-6b2f-5e38-8c32-71f1aed92c0d" .
+
+<urn:buildgraph:tsref:5e71bde7-7d3b-5b8e-995c-dac9d8707b98> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "5e71bde7-7d3b-5b8e-995c-dac9d8707b98" .
+
+<urn:buildgraph:tsref:5f3e0e97-a145-59e5-81b3-b7622bf56391> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "5f3e0e97-a145-59e5-81b3-b7622bf56391" .
+
+<urn:buildgraph:tsref:60c0340f-78fd-539a-8831-2f66174c8d6e> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "60c0340f-78fd-539a-8831-2f66174c8d6e" .
+
+<urn:buildgraph:tsref:618a17a6-09e2-5ce5-bbf7-84560b782320> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "618a17a6-09e2-5ce5-bbf7-84560b782320" .
+
+<urn:buildgraph:tsref:620f9a1e-43c3-56a7-aec9-eab0813ea6ce> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "620f9a1e-43c3-56a7-aec9-eab0813ea6ce" .
+
+<urn:buildgraph:tsref:62f6d5b9-d32d-5451-aa0e-1809ad3fd459> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "62f6d5b9-d32d-5451-aa0e-1809ad3fd459" .
+
+<urn:buildgraph:tsref:6902c095-6fa2-52e4-b692-afa3090c0229> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "6902c095-6fa2-52e4-b692-afa3090c0229" .
+
+<urn:buildgraph:tsref:6acf6d4f-f9d5-5739-872e-ce6a8fa13010> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "6acf6d4f-f9d5-5739-872e-ce6a8fa13010" .
+
+<urn:buildgraph:tsref:6fdc4e41-7eee-55f5-9675-f67afda7229c> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "6fdc4e41-7eee-55f5-9675-f67afda7229c" .
+
+<urn:buildgraph:tsref:7055c48e-d131-5249-a8a7-15aad2fc1d88> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "7055c48e-d131-5249-a8a7-15aad2fc1d88" .
+
+<urn:buildgraph:tsref:724f0055-d300-5b9c-8a30-773d4435ae86> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "724f0055-d300-5b9c-8a30-773d4435ae86" .
+
+<urn:buildgraph:tsref:7405d237-5384-555f-b417-895defa0ac70> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "7405d237-5384-555f-b417-895defa0ac70" .
+
+<urn:buildgraph:tsref:745c54e0-5161-503f-9b89-1edbb1927703> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "745c54e0-5161-503f-9b89-1edbb1927703" .
+
+<urn:buildgraph:tsref:758e80be-f4f6-5ba0-b654-a8cf23f85589> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "758e80be-f4f6-5ba0-b654-a8cf23f85589" .
+
+<urn:buildgraph:tsref:771714be-e56e-5aeb-b272-88ab7da9191e> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "771714be-e56e-5aeb-b272-88ab7da9191e" .
+
+<urn:buildgraph:tsref:7b0ab648-d74e-5b05-9a41-c02597f51ab3> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "7b0ab648-d74e-5b05-9a41-c02597f51ab3" .
+
+<urn:buildgraph:tsref:7b80e068-916c-55c8-82a9-4e2358068cc9> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "7b80e068-916c-55c8-82a9-4e2358068cc9" .
+
+<urn:buildgraph:tsref:7d1dee3b-216d-5236-8dc0-7d7f87b306d7> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "7d1dee3b-216d-5236-8dc0-7d7f87b306d7" .
+
+<urn:buildgraph:tsref:7d8e4a9a-a137-5cb6-987c-3e0e07c58d6b> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "7d8e4a9a-a137-5cb6-987c-3e0e07c58d6b" .
+
+<urn:buildgraph:tsref:7fee0484-69ac-554e-b00a-4728126b92c3> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "7fee0484-69ac-554e-b00a-4728126b92c3" .
+
+<urn:buildgraph:tsref:817e3dd2-0b67-5e43-a8db-1add8612a259> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "817e3dd2-0b67-5e43-a8db-1add8612a259" .
+
+<urn:buildgraph:tsref:81f900c5-8958-5233-9f8a-562cea483ece> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "81f900c5-8958-5233-9f8a-562cea483ece" .
+
+<urn:buildgraph:tsref:851c22bf-a1d8-56bc-b2f3-36c0e54a5ee1> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "851c22bf-a1d8-56bc-b2f3-36c0e54a5ee1" .
+
+<urn:buildgraph:tsref:87488167-84f6-513a-8ba8-9173383f9c65> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "87488167-84f6-513a-8ba8-9173383f9c65" .
+
+<urn:buildgraph:tsref:8810f7e1-8132-56c4-8f4c-4d82dff9d9d3> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "8810f7e1-8132-56c4-8f4c-4d82dff9d9d3" .
+
+<urn:buildgraph:tsref:88776365-8450-52bd-b7b3-0ed77692938a> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "88776365-8450-52bd-b7b3-0ed77692938a" .
+
+<urn:buildgraph:tsref:890c0398-1956-5854-b0bd-534f0b480adf> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "890c0398-1956-5854-b0bd-534f0b480adf" .
+
+<urn:buildgraph:tsref:8ad4437a-1b2c-58c2-a15d-3e0407235aa5> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "8ad4437a-1b2c-58c2-a15d-3e0407235aa5" .
+
+<urn:buildgraph:tsref:8b5f5ff1-6311-56e2-be91-76f770041216> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "8b5f5ff1-6311-56e2-be91-76f770041216" .
+
+<urn:buildgraph:tsref:95216d77-27e2-5355-9aad-3457fa2fe6c2> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "95216d77-27e2-5355-9aad-3457fa2fe6c2" .
+
+<urn:buildgraph:tsref:972e2c6e-0cd2-5a55-a4bf-8e8f09c057a9> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "972e2c6e-0cd2-5a55-a4bf-8e8f09c057a9" .
+
+<urn:buildgraph:tsref:97fffb98-ab67-560d-b7f1-75876ddb7172> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "97fffb98-ab67-560d-b7f1-75876ddb7172" .
+
+<urn:buildgraph:tsref:9931852b-8a5e-5645-af92-e78395dce8b1> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "9931852b-8a5e-5645-af92-e78395dce8b1" .
+
+<urn:buildgraph:tsref:9ce6258b-1e50-5fa6-9cbf-470b6ec8659b> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "9ce6258b-1e50-5fa6-9cbf-470b6ec8659b" .
+
+<urn:buildgraph:tsref:9d765aeb-5bd7-5468-8684-3346a52e12c1> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "9d765aeb-5bd7-5468-8684-3346a52e12c1" .
+
+<urn:buildgraph:tsref:9e4b4761-608f-5eae-8005-f4c5ff87aceb> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "9e4b4761-608f-5eae-8005-f4c5ff87aceb" .
+
+<urn:buildgraph:tsref:a141d756-b62b-5741-83d6-c61c84c414a1> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "a141d756-b62b-5741-83d6-c61c84c414a1" .
+
+<urn:buildgraph:tsref:a3e790c1-9fde-5b75-9c57-9f035ff80092> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "a3e790c1-9fde-5b75-9c57-9f035ff80092" .
+
+<urn:buildgraph:tsref:a521b823-9026-5997-a211-44d26c5002f5> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "a521b823-9026-5997-a211-44d26c5002f5" .
+
+<urn:buildgraph:tsref:a7d343a2-6623-5ea3-bc88-938bff8bd0af> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "a7d343a2-6623-5ea3-bc88-938bff8bd0af" .
+
+<urn:buildgraph:tsref:a9240db6-90b9-573a-8aff-166097a4aa4b> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "a9240db6-90b9-573a-8aff-166097a4aa4b" .
+
+<urn:buildgraph:tsref:aaf487eb-76d6-5874-83b2-74b7e3933b23> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "aaf487eb-76d6-5874-83b2-74b7e3933b23" .
+
+<urn:buildgraph:tsref:ab591833-2f76-5e86-8abd-8b5b3e1d9d8c> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "ab591833-2f76-5e86-8abd-8b5b3e1d9d8c" .
+
+<urn:buildgraph:tsref:ab5a1d6c-330a-5d20-ab18-e6495cd74ab1> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "ab5a1d6c-330a-5d20-ab18-e6495cd74ab1" .
+
+<urn:buildgraph:tsref:ac2cae02-68d9-5bd6-bdd2-0523ffc35ce1> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "ac2cae02-68d9-5bd6-bdd2-0523ffc35ce1" .
+
+<urn:buildgraph:tsref:ad1c5cb0-9318-5cc0-b896-46cb8ed628d5> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "ad1c5cb0-9318-5cc0-b896-46cb8ed628d5" .
+
+<urn:buildgraph:tsref:aedf0f2c-1d03-5064-9694-9e10aac5bac3> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "aedf0f2c-1d03-5064-9694-9e10aac5bac3" .
+
+<urn:buildgraph:tsref:af8aece0-076e-5997-bf0e-67b465707b22> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "af8aece0-076e-5997-bf0e-67b465707b22" .
+
+<urn:buildgraph:tsref:b053dcf7-84c8-5389-980c-382e8ff0e26d> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "b053dcf7-84c8-5389-980c-382e8ff0e26d" .
+
+<urn:buildgraph:tsref:b1cb8ad9-14e3-53e9-8067-0fd096e81885> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "b1cb8ad9-14e3-53e9-8067-0fd096e81885" .
+
+<urn:buildgraph:tsref:b22df2ca-05d8-543f-900b-d2f43aa0a9d1> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "b22df2ca-05d8-543f-900b-d2f43aa0a9d1" .
+
+<urn:buildgraph:tsref:b630367e-e444-5384-9eb4-f485934eb705> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "b630367e-e444-5384-9eb4-f485934eb705" .
+
+<urn:buildgraph:tsref:b6dd1d1a-461c-5990-b8f3-e5743ab23934> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "b6dd1d1a-461c-5990-b8f3-e5743ab23934" .
+
+<urn:buildgraph:tsref:b9fc0897-9d36-5b78-a7b6-69bff6fd336f> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "b9fc0897-9d36-5b78-a7b6-69bff6fd336f" .
+
+<urn:buildgraph:tsref:bc4b5108-9a30-5bbe-a32b-19a22c08f8c5> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "bc4b5108-9a30-5bbe-a32b-19a22c08f8c5" .
+
+<urn:buildgraph:tsref:bd2553ee-2fb8-5985-89ae-851e8ea0363d> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "bd2553ee-2fb8-5985-89ae-851e8ea0363d" .
+
+<urn:buildgraph:tsref:be0a5432-f137-5b0a-822b-0f1a4691e3d1> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "be0a5432-f137-5b0a-822b-0f1a4691e3d1" .
+
+<urn:buildgraph:tsref:bee91d03-528f-55d4-8048-1b5730225175> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "bee91d03-528f-55d4-8048-1b5730225175" .
+
+<urn:buildgraph:tsref:c1837a17-704a-59d6-acf8-09db08df4767> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "c1837a17-704a-59d6-acf8-09db08df4767" .
+
+<urn:buildgraph:tsref:c59a4895-49b0-5abe-b44e-3c434ccff061> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "c59a4895-49b0-5abe-b44e-3c434ccff061" .
+
+<urn:buildgraph:tsref:caa254bd-26bd-547b-b4f2-04e3ced5bdd8> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "caa254bd-26bd-547b-b4f2-04e3ced5bdd8" .
+
+<urn:buildgraph:tsref:cc8afd9f-a329-5206-bc97-dcba23721dc6> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "cc8afd9f-a329-5206-bc97-dcba23721dc6" .
+
+<urn:buildgraph:tsref:ccdd33df-646b-5bb1-8b74-ae90393b4710> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "ccdd33df-646b-5bb1-8b74-ae90393b4710" .
+
+<urn:buildgraph:tsref:ce2e0173-b987-56e3-ab61-a4f8829a8834> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "ce2e0173-b987-56e3-ab61-a4f8829a8834" .
+
+<urn:buildgraph:tsref:d2b2d42f-a595-5722-bdfb-3c5bc378c3ed> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "d2b2d42f-a595-5722-bdfb-3c5bc378c3ed" .
+
+<urn:buildgraph:tsref:d2e7fafc-74de-59fc-a8a8-1a3ee8107d4c> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "d2e7fafc-74de-59fc-a8a8-1a3ee8107d4c" .
+
+<urn:buildgraph:tsref:d3d2f87d-3ae1-581a-92d5-448477f6893e> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "d3d2f87d-3ae1-581a-92d5-448477f6893e" .
+
+<urn:buildgraph:tsref:d6ef275d-858c-57f7-a396-cd7b1abf3efe> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "d6ef275d-858c-57f7-a396-cd7b1abf3efe" .
+
+<urn:buildgraph:tsref:d6f656ce-cdd8-5d39-a644-ecd78a7e0f6c> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "d6f656ce-cdd8-5d39-a644-ecd78a7e0f6c" .
+
+<urn:buildgraph:tsref:da696a6b-3703-5d7c-944b-ad9073aed8e8> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "da696a6b-3703-5d7c-944b-ad9073aed8e8" .
+
+<urn:buildgraph:tsref:db61562e-2f74-5f46-9741-167ed02437ea> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "db61562e-2f74-5f46-9741-167ed02437ea" .
+
+<urn:buildgraph:tsref:e044ff60-0e87-51d1-b2d0-44811081fed1> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "e044ff60-0e87-51d1-b2d0-44811081fed1" .
+
+<urn:buildgraph:tsref:e1ae6dd3-87c7-5f6c-8c20-989f55f14148> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "e1ae6dd3-87c7-5f6c-8c20-989f55f14148" .
+
+<urn:buildgraph:tsref:e3ef534f-fd9b-513a-aaa1-7e1e305c1d25> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "e3ef534f-fd9b-513a-aaa1-7e1e305c1d25" .
+
+<urn:buildgraph:tsref:e4583340-f25b-5ecb-9e46-7fbbffde4575> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "e4583340-f25b-5ecb-9e46-7fbbffde4575" .
+
+<urn:buildgraph:tsref:e89139d1-f3cf-536d-8423-d6a47f922b7a> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "e89139d1-f3cf-536d-8423-d6a47f922b7a" .
+
+<urn:buildgraph:tsref:ef6b0b60-79a7-5d8b-905b-6a3de98fb513> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "ef6b0b60-79a7-5d8b-905b-6a3de98fb513" .
+
+<urn:buildgraph:tsref:ef7960c1-ec93-5720-bd8b-e48e0a3d2f2a> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "ef7960c1-ec93-5720-bd8b-e48e0a3d2f2a" .
+
+<urn:buildgraph:tsref:f0290e0d-30a3-5686-a067-ae7c645deb3f> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "f0290e0d-30a3-5686-a067-ae7c645deb3f" .
+
+<urn:buildgraph:tsref:f20513e0-ebb4-5e00-8dee-ba3a99ae3933> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "f20513e0-ebb4-5e00-8dee-ba3a99ae3933" .
+
+<urn:buildgraph:tsref:f37be8f6-493b-57fd-be37-b2cc7cc03e61> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "f37be8f6-493b-57fd-be37-b2cc7cc03e61" .
+
+<urn:buildgraph:tsref:f7dc76c8-850d-5fbf-939a-7a502a99536f> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "f7dc76c8-850d-5fbf-939a-7a502a99536f" .
+
+<urn:buildgraph:tsref:fa40d576-c639-598c-90ef-e0d9242b3f7d> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "fa40d576-c639-598c-90ef-e0d9242b3f7d" .
+
+<urn:buildgraph:tsref:fb4bc25d-63ca-5385-a9b2-aa62793f1e7a> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "fb4bc25d-63ca-5385-a9b2-aa62793f1e7a" .
+
+<urn:buildgraph:tsref:fbbe2eff-7743-599d-b1a3-15b74b4195a5> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "fbbe2eff-7743-599d-b1a3-15b74b4195a5" .
+
+<urn:buildgraph:tsref:fc882c0b-d6e7-58a9-9de0-a06db617d754> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "fc882c0b-d6e7-58a9-9de0-a06db617d754" .
+
+<urn:buildgraph:tsref:fe60c82a-a81f-5cea-8570-474600f5621d> a ref:TimeseriesReference ;
+    ref:hasTimeseriesId "fe60c82a-a81f-5cea-8570-474600f5621d" .
+
+bldg:SF-AHU-L1-01 a brick:Supply_Fan ;
+    brick:hasPoint bldg:SF-AHU-L1-01.Fan_Speed_Setpoint,
+        bldg:SF-AHU-L1-01.Fan_Status,
+        bldg:SF-AHU-L1-01.Output_Frequency_Sensor,
+        bldg:SF-AHU-L1-01.Speed_Status,
+        bldg:SF-AHU-L1-01.Start_Stop_Command .
+
+bldg:SF-AHU-L1-02 a brick:Supply_Fan ;
+    brick:hasPoint bldg:SF-AHU-L1-02.Fan_Status,
+        bldg:SF-AHU-L1-02.Speed_Setpoint,
+        bldg:SF-AHU-L1-02.Speed_Status,
+        bldg:SF-AHU-L1-02.Start_Stop_Command .
+
+bldg:SF-AHU-L1-03 a brick:Supply_Fan ;
+    brick:hasPoint bldg:SF-AHU-L1-03.Fan_Speed_Setpoint,
+        bldg:SF-AHU-L1-03.Output_Frequency_Sensor,
+        bldg:SF-AHU-L1-03.Speed_Setpoint,
+        bldg:SF-AHU-L1-03.Speed_Status,
+        bldg:SF-AHU-L1-03.Start_Stop_Command,
+        bldg:SF-AHU-L1-03.Static_Pressure_Sensor .
+
+bldg:SF-AHU-L1-04 a brick:Supply_Fan ;
+    brick:hasPoint bldg:SF-AHU-L1-04.Fan_Speed_Setpoint,
+        bldg:SF-AHU-L1-04.Output_Frequency_Sensor,
+        bldg:SF-AHU-L1-04.Speed_Setpoint,
+        bldg:SF-AHU-L1-04.Speed_Status,
+        bldg:SF-AHU-L1-04.Start_Stop_Command .
+
+bldg:ZN-L1-01 a brick:HVAC_Zone ;
+    rdfs:label "Zone_F1_Z001" ;
+    brick:hasPoint bldg:ZN-L1-01.Zone_Air_Cooling_Temperature_Setpoint,
+        bldg:ZN-L1-01.Zone_Air_Heating_Temperature_Setpoint,
+        bldg:ZN-L1-01.Zone_Air_Temperature_Sensor ;
+    meta:floorAreaM2 111.8 ;
+    meta:spatialLocation "core" ;
+    meta:zoneType "office" .
+
+bldg:ZN-L1-02 a brick:HVAC_Zone ;
+    rdfs:label "Zone_F1_Z002" ;
+    brick:hasPoint bldg:ZN-L1-02.Zone_Air_Cooling_Temperature_Setpoint,
+        bldg:ZN-L1-02.Zone_Air_Heating_Temperature_Setpoint,
+        bldg:ZN-L1-02.Zone_Air_Temperature_Sensor ;
+    meta:floorAreaM2 39.8 ;
+    meta:spatialLocation "perimeter_S" ;
+    meta:zoneType "storage" .
+
+bldg:ZN-L1-03 a brick:HVAC_Zone ;
+    rdfs:label "Zone_F1_Z003" ;
+    brick:hasPoint bldg:ZN-L1-03.Occupancy_Sensor,
+        bldg:ZN-L1-03.Zone_Air_Cooling_Temperature_Setpoint,
+        bldg:ZN-L1-03.Zone_Air_Heating_Temperature_Setpoint,
+        bldg:ZN-L1-03.Zone_Air_Temperature_Sensor ;
+    meta:floorAreaM2 253.1 ;
+    meta:spatialLocation "perimeter_E" ;
+    meta:zoneType "retail" .
+
+bldg:ZN-L1-04 a brick:HVAC_Zone ;
+    rdfs:label "Zone_F1_Z004" ;
+    brick:hasPoint bldg:ZN-L1-04.Zone_Air_Cooling_Temperature_Setpoint,
+        bldg:ZN-L1-04.Zone_Air_Temperature_Sensor ;
+    meta:floorAreaM2 65.7 ;
+    meta:spatialLocation "perimeter_E" ;
+    meta:zoneType "office" .
+
+bldg:ZN-L1-05 a brick:HVAC_Zone ;
+    rdfs:label "Zone_F1_Z005" ;
+    brick:hasPoint bldg:ZN-L1-05.Zone_Air_Heating_Temperature_Setpoint,
+        bldg:ZN-L1-05.Zone_Air_Temperature_Sensor ;
+    meta:floorAreaM2 283.2 ;
+    meta:spatialLocation "perimeter_N" ;
+    meta:zoneType "retail" .
+
+bldg:ZN-L1-06 a brick:HVAC_Zone ;
+    rdfs:label "Zone_F1_Z006" ;
+    brick:hasPoint bldg:ZN-L1-06.CO2_Sensor,
+        bldg:ZN-L1-06.Zone_Air_Cooling_Temperature_Setpoint,
+        bldg:ZN-L1-06.Zone_Air_Heating_Temperature_Setpoint,
+        bldg:ZN-L1-06.Zone_Air_Temperature_Sensor ;
+    meta:floorAreaM2 96.7 ;
+    meta:spatialLocation "perimeter_E" ;
+    meta:zoneType "office" .
+
+bldg:ZN-L1-07 a brick:HVAC_Zone ;
+    rdfs:label "Zone_F1_Z007" ;
+    brick:hasPoint bldg:ZN-L1-07.CO2_Sensor,
+        bldg:ZN-L1-07.Zone_Air_Cooling_Temperature_Setpoint,
+        bldg:ZN-L1-07.Zone_Air_Heating_Temperature_Setpoint,
+        bldg:ZN-L1-07.Zone_Air_Temperature_Sensor ;
+    meta:floorAreaM2 29.6 ;
+    meta:spatialLocation "core" ;
+    meta:zoneType "corridor" .
+
+bldg:ZN-L1-08 a brick:HVAC_Zone ;
+    rdfs:label "Zone_F1_Z008" ;
+    brick:hasPoint bldg:ZN-L1-08.Air_Quality_Sensor,
+        bldg:ZN-L1-08.Occupancy_Sensor,
+        bldg:ZN-L1-08.Zone_Air_Cooling_Temperature_Setpoint,
+        bldg:ZN-L1-08.Zone_Air_Heating_Temperature_Setpoint,
+        bldg:ZN-L1-08.Zone_Air_Temperature_Sensor ;
+    meta:floorAreaM2 57.1 ;
+    meta:spatialLocation "core" ;
+    meta:zoneType "office" .
+
+bldg:ZN-L1-09 a brick:HVAC_Zone ;
+    rdfs:label "Zone_F1_Z009" ;
+    brick:hasPoint bldg:ZN-L1-09.Air_Quality_Sensor,
+        bldg:ZN-L1-09.Zone_Air_Temperature_Sensor ;
+    meta:floorAreaM2 231.3 ;
+    meta:spatialLocation "perimeter_S" ;
+    meta:zoneType "retail" .
+
+bldg:ZN-L1-10 a brick:HVAC_Zone ;
+    rdfs:label "Zone_F1_Z010" ;
+    brick:hasPoint bldg:ZN-L1-10.Zone_Air_Cooling_Temperature_Setpoint,
+        bldg:ZN-L1-10.Zone_Air_Temperature_Sensor ;
+    meta:floorAreaM2 62.8 ;
+    meta:spatialLocation "perimeter_E" ;
+    meta:zoneType "corridor" .
+

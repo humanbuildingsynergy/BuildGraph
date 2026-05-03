@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "buildgraph"
+version = "1.0.0"
+description = "Synthetic Brick Schema building knowledge graph generator grounded in DOE prototype archetypes"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "CC BY-NC 4.0" }
+keywords = ["building", "knowledge-graph", "SPARQL", "Brick", "synthetic-data"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "License :: Other/Proprietary License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "rdflib>=6.3,<8.0",
+    "pydantic>=2.0,<3.0",
+]
+
+[project.optional-dependencies]
+validation = [
+    "pyshacl>=0.25",
+    "brickschema>=0.7",
+]
+
+[project.urls]
+Homepage   = "https://github.com/humanbuildingsynergy/BuildGraph"
+Repository = "https://github.com/humanbuildingsynergy/BuildGraph"
+Dataset    = "https://doi.org/10.5281/zenodo.20015123"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["buildgraph*"]

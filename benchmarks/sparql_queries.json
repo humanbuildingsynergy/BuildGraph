@@ -1,0 +1,1251 @@
+{
+  "_comment": "BuildGraph SPARQL Benchmark \u2014 75 queries across 5 categories. Scope features are auto-detected from each graph before execution. Expected 'non_empty' means result set has \u22651 row.",
+  "prefixes": "PREFIX brick: <https://brickschema.org/schema/Brick#>\nPREFIX ref:   <https://brickschema.org/schema/Brick/ref#>\nPREFIX meta:  <https://buildgraph.org/meta#>\nPREFIX rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>",
+  "scope_checks": {
+    "has_chiller": "ASK { ?x a brick:Chiller }",
+    "has_boiler": "ASK { ?x a brick:Boiler }",
+    "has_plant": "ASK { { ?x a brick:Chiller } UNION { ?x a brick:Boiler } }",
+    "has_fcu": "ASK { ?x a brick:Fan_Coil_Unit }",
+    "has_vav": "ASK { ?x a brick:VAV }",
+    "has_return_fan": "ASK { ?x a brick:Return_Fan }",
+    "has_erv": "ASK { ?x a brick:Heat_Exchanger }",
+    "has_cooling_tower": "ASK { ?x a brick:Cooling_Tower }",
+    "has_zone_sensors": "ASK { ?z a brick:HVAC_Zone . { ?z brick:hasPoint ?s } UNION { ?s brick:isPointOf ?z } . ?s a brick:Zone_Air_Temperature_Sensor }",
+    "has_terminal_sensors": "ASK { { ?t a brick:VAV } UNION { ?t a brick:Fan_Coil_Unit } . { ?t brick:hasPoint ?s } UNION { ?s brick:isPointOf ?t } . ?s a brick:Zone_Air_Temperature_Sensor }",
+    "has_server_room": "ASK { ?z meta:zoneType \"server_room\" }",
+    "has_lobby": "ASK { ?z meta:zoneType \"lobby\" }",
+    "has_ahu": "ASK { ?x a brick:AHU }",
+    "has_mixed_rel_style": "ASK { ?e brick:hasPoint ?s . ?s brick:isPointOf ?e }"
+  },
+  "queries": [
+    {
+      "id": "Q01",
+      "category": 1,
+      "difficulty": "easy",
+      "nl": "List all air handling units in the building",
+      "sparql": "SELECT DISTINCT ?x WHERE { ?x a brick:AHU }",
+      "expected": "non_empty",
+      "scope": [
+        "has_ahu"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "application": "asset_inventory"
+    },
+    {
+      "id": "Q02",
+      "category": 1,
+      "difficulty": "easy",
+      "nl": "List all VAV boxes",
+      "sparql": "SELECT DISTINCT ?x WHERE { ?x a brick:VAV }",
+      "expected": "non_empty",
+      "scope": [
+        "has_vav"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "application": "asset_inventory"
+    },
+    {
+      "id": "Q03",
+      "category": 1,
+      "difficulty": "easy",
+      "nl": "List all fan coil units",
+      "sparql": "SELECT DISTINCT ?x WHERE { ?x a brick:Fan_Coil_Unit }",
+      "expected": "non_empty",
+      "scope": [
+        "has_fcu"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "application": "asset_inventory"
+    },
+    {
+      "id": "Q04",
+      "category": 1,
+      "difficulty": "easy",
+      "nl": "List all chillers",
+      "sparql": "SELECT DISTINCT ?x WHERE { ?x a brick:Chiller }",
+      "expected": "non_empty",
+      "scope": [
+        "has_chiller"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "application": "asset_inventory"
+    },
+    {
+      "id": "Q05",
+      "category": 1,
+      "difficulty": "easy",
+      "nl": "List all boilers",
+      "sparql": "SELECT DISTINCT ?x WHERE { ?x a brick:Boiler }",
+      "expected": "non_empty",
+      "scope": [
+        "has_boiler"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "application": "asset_inventory"
+    },
+    {
+      "id": "Q06",
+      "category": 1,
+      "difficulty": "easy",
+      "nl": "List all supply fans",
+      "sparql": "SELECT DISTINCT ?x WHERE { ?x a brick:Supply_Fan }",
+      "expected": "non_empty",
+      "scope": [
+        "has_ahu"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "application": "asset_inventory"
+    },
+    {
+      "id": "Q07",
+      "category": 1,
+      "difficulty": "easy",
+      "nl": "List all cooling coils",
+      "sparql": "SELECT DISTINCT ?x WHERE { ?x a brick:Cooling_Coil }",
+      "expected": "non_empty",
+      "scope": [
+        "has_chiller"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "application": "asset_inventory"
+    },
+    {
+      "id": "Q08",
+      "category": 1,
+      "difficulty": "easy",
+      "nl": "List all cooling towers",
+      "sparql": "SELECT DISTINCT ?x WHERE { ?x a brick:Cooling_Tower }",
+      "expected": "non_empty",
+      "scope": [
+        "has_cooling_tower"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "application": "asset_inventory"
+    },
+    {
+      "id": "Q09",
+      "category": 1,
+      "difficulty": "easy",
+      "nl": "List all chilled water pumps",
+      "sparql": "SELECT DISTINCT ?x WHERE { ?x a brick:Chilled_Water_Pump }",
+      "expected": "non_empty",
+      "scope": [
+        "has_chiller"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "application": "asset_inventory"
+    },
+    {
+      "id": "Q10",
+      "category": 1,
+      "difficulty": "easy",
+      "nl": "List all variable frequency drives",
+      "sparql": "SELECT DISTINCT ?x WHERE { ?x a brick:Variable_Frequency_Drive }",
+      "expected": "non_empty",
+      "scope": [
+        "has_ahu"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "application": "asset_inventory"
+    },
+    {
+      "id": "Q11",
+      "category": 1,
+      "difficulty": "easy",
+      "nl": "List all floors in the building",
+      "sparql": "SELECT DISTINCT ?x WHERE { ?x a brick:Floor }",
+      "expected": "non_empty",
+      "scope": [
+        "all"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "application": "asset_inventory"
+    },
+    {
+      "id": "Q12",
+      "category": 1,
+      "difficulty": "easy",
+      "nl": "List all HVAC zones",
+      "sparql": "SELECT DISTINCT ?x WHERE { ?x a brick:HVAC_Zone }",
+      "expected": "non_empty",
+      "scope": [
+        "all"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "application": "asset_inventory"
+    },
+    {
+      "id": "Q13",
+      "category": 1,
+      "difficulty": "easy",
+      "nl": "List all heat exchangers (energy recovery ventilators)",
+      "sparql": "SELECT DISTINCT ?x WHERE { ?x a brick:Heat_Exchanger }",
+      "expected": "non_empty",
+      "scope": [
+        "has_erv"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "application": "asset_inventory"
+    },
+    {
+      "id": "Q14",
+      "category": 1,
+      "difficulty": "easy",
+      "nl": "List all electrical meters",
+      "sparql": "SELECT DISTINCT ?x WHERE { ?x a brick:Electrical_Meter }",
+      "expected": "non_empty",
+      "scope": [
+        "all"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "notes": "pre1980 buildings have no electric meter; scope=all so they naturally score 0",
+      "application": "asset_inventory"
+    },
+    {
+      "id": "Q15",
+      "category": 1,
+      "difficulty": "easy",
+      "nl": "List all return fans",
+      "sparql": "SELECT DISTINCT ?x WHERE { ?x a brick:Return_Fan }",
+      "expected": "non_empty",
+      "scope": [
+        "has_return_fan"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "application": "asset_inventory"
+    },
+    {
+      "id": "Q16",
+      "category": 2,
+      "difficulty": "easy",
+      "nl": "Find supply air temperature sensors on AHUs (BAS hasPoint export style)",
+      "sparql": "SELECT DISTINCT ?ahu ?s WHERE { ?ahu a brick:AHU . { ?ahu brick:hasPoint ?s } UNION { ?s brick:isPointOf ?ahu } . ?s a brick:Supply_Air_Temperature_Sensor }",
+      "expected": "non_empty",
+      "scope": [
+        "has_ahu"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "application": "bas_point_mapping"
+    },
+    {
+      "id": "Q17",
+      "category": 2,
+      "difficulty": "easy",
+      "nl": "Find CO2 sensors on HVAC zones (BAS hasPoint export style)",
+      "sparql": "SELECT DISTINCT ?z ?s WHERE { ?z a brick:HVAC_Zone . ?z brick:hasPoint ?s . ?s a brick:CO2_Sensor }",
+      "expected": "non_empty",
+      "scope": [
+        "has_zone_sensors"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "notes": "Tests standard and mixed rel_style only; inverse-style buildings score 0 here by design",
+      "application": "bas_point_mapping"
+    },
+    {
+      "id": "Q18",
+      "category": 2,
+      "difficulty": "easy",
+      "nl": "Find CO2 sensors on HVAC zones (BAS isPointOf export style)",
+      "sparql": "SELECT DISTINCT ?z ?s WHERE { ?z a brick:HVAC_Zone . ?s brick:isPointOf ?z . ?s a brick:CO2_Sensor }",
+      "expected": "non_empty",
+      "scope": [
+        "has_zone_sensors"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "notes": "Tests inverse and mixed rel_style only; standard-style buildings score 0 here by design",
+      "application": "bas_point_mapping"
+    },
+    {
+      "id": "Q19",
+      "category": 2,
+      "difficulty": "easy",
+      "nl": "Find zone cooling temperature setpoints",
+      "sparql": "SELECT DISTINCT ?z ?sp WHERE { ?z a brick:HVAC_Zone . { ?z brick:hasPoint ?sp } UNION { ?sp brick:isPointOf ?z } . ?sp a brick:Zone_Air_Cooling_Temperature_Setpoint }",
+      "expected": "non_empty",
+      "scope": [
+        "has_zone_sensors"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "application": "bas_point_mapping"
+    },
+    {
+      "id": "Q20",
+      "category": 2,
+      "difficulty": "easy",
+      "nl": "Find zone heating temperature setpoints",
+      "sparql": "SELECT DISTINCT ?z ?sp WHERE { ?z a brick:HVAC_Zone . { ?z brick:hasPoint ?sp } UNION { ?sp brick:isPointOf ?z } . ?sp a brick:Zone_Air_Heating_Temperature_Setpoint }",
+      "expected": "non_empty",
+      "scope": [
+        "has_zone_sensors"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "application": "bas_point_mapping"
+    },
+    {
+      "id": "Q21",
+      "category": 2,
+      "difficulty": "easy",
+      "nl": "Find occupancy sensors on any HVAC zone",
+      "sparql": "SELECT DISTINCT ?z ?s WHERE { ?z a brick:HVAC_Zone . { ?z brick:hasPoint ?s } UNION { ?s brick:isPointOf ?z } . ?s a brick:Occupancy_Sensor }",
+      "expected": "non_empty",
+      "scope": [
+        "has_zone_sensors"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "application": "bas_point_mapping"
+    },
+    {
+      "id": "Q22",
+      "category": 2,
+      "difficulty": "easy",
+      "nl": "Find all sensors with timeseries UUIDs (ingestion readiness check)",
+      "sparql": "SELECT DISTINCT ?s ?ts WHERE { ?s ref:hasExternalReference ?ref . ?ref ref:hasTimeseriesId ?ts }",
+      "expected": "non_empty",
+      "scope": [
+        "all"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "application": "timeseries_ingestion"
+    },
+    {
+      "id": "Q23",
+      "category": 2,
+      "difficulty": "medium",
+      "nl": "Find cooling and heating setpoints on VAV boxes",
+      "sparql": "SELECT DISTINCT ?v ?sp WHERE { ?v a brick:VAV . { ?v brick:hasPoint ?sp } UNION { ?sp brick:isPointOf ?v } . { ?sp a brick:Zone_Air_Cooling_Temperature_Setpoint } UNION { ?sp a brick:Zone_Air_Heating_Temperature_Setpoint } }",
+      "expected": "non_empty",
+      "scope": [
+        "has_vav"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "application": "bas_point_mapping"
+    },
+    {
+      "id": "Q24",
+      "category": 2,
+      "difficulty": "medium",
+      "nl": "Find start/stop commands on supply fans",
+      "sparql": "SELECT DISTINCT ?sf ?cmd WHERE { ?sf a brick:Supply_Fan . { ?sf brick:hasPoint ?cmd } UNION { ?cmd brick:isPointOf ?sf } . ?cmd a brick:Start_Stop_Command }",
+      "expected": "non_empty",
+      "scope": [
+        "has_ahu"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "application": "bas_point_mapping"
+    },
+    {
+      "id": "Q25",
+      "category": 2,
+      "difficulty": "medium",
+      "nl": "Find chilled water supply temperature sensors on chillers",
+      "sparql": "SELECT DISTINCT ?c ?s WHERE { ?c a brick:Chiller . { ?c brick:hasPoint ?s } UNION { ?s brick:isPointOf ?c } . ?s a brick:Chilled_Water_Supply_Temperature_Sensor }",
+      "expected": "non_empty",
+      "scope": [
+        "has_chiller"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "application": "bas_point_mapping"
+    },
+    {
+      "id": "Q26",
+      "category": 2,
+      "difficulty": "medium",
+      "nl": "Find hot water supply temperature sensors on boilers",
+      "sparql": "SELECT DISTINCT ?b ?s WHERE { ?b a brick:Boiler . { ?b brick:hasPoint ?s } UNION { ?s brick:isPointOf ?b } . ?s a brick:Hot_Water_Supply_Temperature_Sensor }",
+      "expected": "non_empty",
+      "scope": [
+        "has_boiler"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "application": "bas_point_mapping"
+    },
+    {
+      "id": "Q27",
+      "category": 2,
+      "difficulty": "medium",
+      "nl": "Find any sensor points on cooling coils",
+      "sparql": "SELECT DISTINCT ?cc ?s WHERE { ?cc a brick:Cooling_Coil . { ?cc brick:hasPoint ?s } UNION { ?s brick:isPointOf ?cc } }",
+      "expected": "non_empty",
+      "scope": [
+        "has_chiller"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "application": "bas_point_mapping"
+    },
+    {
+      "id": "Q28",
+      "category": 2,
+      "difficulty": "medium",
+      "nl": "Find any sensor points on heating coils",
+      "sparql": "SELECT DISTINCT ?hc ?s WHERE { ?hc a brick:Heating_Coil . { ?hc brick:hasPoint ?s } UNION { ?s brick:isPointOf ?hc } }",
+      "expected": "non_empty",
+      "scope": [
+        "has_boiler"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "application": "bas_point_mapping"
+    },
+    {
+      "id": "Q29",
+      "category": 2,
+      "difficulty": "medium",
+      "nl": "Find supply air temperature sensors on AHUs (BAS isPointOf export style)",
+      "sparql": "SELECT DISTINCT ?s ?ahu WHERE { ?s a brick:Supply_Air_Temperature_Sensor . ?s brick:isPointOf ?ahu . ?ahu a brick:AHU }",
+      "expected": "non_empty",
+      "scope": [
+        "has_ahu"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "notes": "Only passes for inverse and mixed rel_style buildings",
+      "application": "bas_point_mapping"
+    },
+    {
+      "id": "Q30",
+      "category": 2,
+      "difficulty": "medium",
+      "nl": "Find sensors consistent across both hasPoint and isPointOf (data quality check for ingestion)",
+      "sparql": "SELECT DISTINCT ?e ?s WHERE { ?e brick:hasPoint ?s . ?s brick:isPointOf ?e }",
+      "expected": "non_empty",
+      "scope": [
+        "has_mixed_rel_style"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "notes": "Only passes for mixed rel_style buildings; tests dataset relationship diversity",
+      "application": "timeseries_ingestion"
+    },
+    {
+      "id": "Q31",
+      "category": 3,
+      "difficulty": "medium",
+      "nl": "Find all zones served by any AHU",
+      "sparql": "SELECT DISTINCT ?ahu ?zone WHERE { ?ahu a brick:AHU . ?ahu brick:feeds+ ?zone . ?zone a brick:HVAC_Zone }",
+      "expected": "non_empty",
+      "scope": [
+        "has_ahu"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "application": "fdd_topology"
+    },
+    {
+      "id": "Q32",
+      "category": 3,
+      "difficulty": "medium",
+      "nl": "Find all VAV boxes and the zones they directly serve",
+      "sparql": "SELECT DISTINCT ?vav ?zone WHERE { ?vav a brick:VAV . ?vav brick:feeds ?zone . ?zone a brick:HVAC_Zone }",
+      "expected": "non_empty",
+      "scope": [
+        "has_vav"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "application": "fdd_topology"
+    },
+    {
+      "id": "Q33",
+      "category": 3,
+      "difficulty": "medium",
+      "nl": "Find return air temperature sensors on AHUs",
+      "sparql": "SELECT DISTINCT ?ahu ?s WHERE { ?ahu a brick:AHU . { ?ahu brick:hasPoint ?s } UNION { ?s brick:isPointOf ?ahu } . ?s a brick:Return_Air_Temperature_Sensor }",
+      "expected": "non_empty",
+      "scope": [
+        "has_ahu"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "application": "fdd_topology"
+    },
+    {
+      "id": "Q34",
+      "category": 3,
+      "difficulty": "medium",
+      "nl": "Find outside air temperature sensors on AHUs (economizer FDD signal)",
+      "sparql": "SELECT DISTINCT ?ahu ?s WHERE { ?ahu a brick:AHU . { ?ahu brick:hasPoint ?s } UNION { ?s brick:isPointOf ?ahu } . ?s a brick:Outside_Air_Temperature_Sensor }",
+      "expected": "non_empty",
+      "scope": [
+        "has_ahu"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "application": "fdd_topology"
+    },
+    {
+      "id": "Q35",
+      "category": 3,
+      "difficulty": "medium",
+      "nl": "Find all VFDs and the equipment they control",
+      "sparql": "SELECT DISTINCT ?vfd ?equip WHERE { ?vfd a brick:Variable_Frequency_Drive . ?vfd brick:controls ?equip }",
+      "expected": "non_empty",
+      "scope": [
+        "has_ahu"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "application": "fdd_topology"
+    },
+    {
+      "id": "Q36",
+      "category": 3,
+      "difficulty": "medium",
+      "nl": "Find zones reachable from a chiller through AHU (chiller feeds AHU feeds zone)",
+      "sparql": "SELECT DISTINCT ?chiller ?ahu ?zone WHERE { ?chiller a brick:Chiller . ?chiller brick:feeds+ ?ahu . ?ahu a brick:AHU . ?ahu brick:feeds+ ?zone . ?zone a brick:HVAC_Zone }",
+      "expected": "non_empty",
+      "scope": [
+        "has_chiller"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "application": "fdd_topology"
+    },
+    {
+      "id": "Q37",
+      "category": 3,
+      "difficulty": "medium",
+      "nl": "Find FCU terminals fed directly by a chiller (FCU-to-plant connection)",
+      "sparql": "SELECT DISTINCT ?chiller ?fcu WHERE { ?chiller a brick:Chiller . ?chiller brick:feeds+ ?fcu . ?fcu a brick:Fan_Coil_Unit }",
+      "expected": "non_empty",
+      "scope": [
+        "has_fcu",
+        "has_chiller"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "notes": "Tests A3: FCU-to-plant connection",
+      "application": "fdd_topology"
+    },
+    {
+      "id": "Q38",
+      "category": 3,
+      "difficulty": "medium",
+      "nl": "Find zones served by FCUs that are fed by a boiler",
+      "sparql": "SELECT DISTINCT ?boiler ?fcu ?zone WHERE { ?boiler a brick:Boiler . ?boiler brick:feeds+ ?fcu . ?fcu a brick:Fan_Coil_Unit . ?fcu brick:feeds ?zone . ?zone a brick:HVAC_Zone }",
+      "expected": "non_empty",
+      "scope": [
+        "has_fcu",
+        "has_boiler"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "notes": "Tests A3: boiler feeds FCU directly",
+      "application": "fdd_topology"
+    },
+    {
+      "id": "Q39",
+      "category": 3,
+      "difficulty": "medium",
+      "nl": "Find chilled water pumps and the AHUs they feed",
+      "sparql": "SELECT DISTINCT ?pump ?ahu WHERE { ?pump a brick:Chilled_Water_Pump . ?pump brick:feeds ?ahu . ?ahu a brick:AHU }",
+      "expected": "non_empty",
+      "scope": [
+        "has_chiller"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "notes": "Tests A4: CHW pump loop connections",
+      "application": "fdd_topology"
+    },
+    {
+      "id": "Q40",
+      "category": 3,
+      "difficulty": "medium",
+      "nl": "Find cooling towers that feed chillers",
+      "sparql": "SELECT DISTINCT ?ct ?chiller WHERE { ?ct a brick:Cooling_Tower . ?ct brick:feeds ?chiller . ?chiller a brick:Chiller }",
+      "expected": "non_empty",
+      "scope": [
+        "has_cooling_tower"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "application": "fdd_topology"
+    },
+    {
+      "id": "Q41",
+      "category": 3,
+      "difficulty": "medium",
+      "nl": "Find zones with direct zone-level air temperature sensors (demand-controlled ventilation scoping)",
+      "sparql": "SELECT DISTINCT ?zone ?s WHERE { ?zone a brick:HVAC_Zone . { ?zone brick:hasPoint ?s } UNION { ?s brick:isPointOf ?zone } . ?s a brick:Zone_Air_Temperature_Sensor }",
+      "expected": "non_empty",
+      "scope": [
+        "has_zone_sensors"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "notes": "Tests A7: zone-level sensor attachment",
+      "application": "control_zone_scoping"
+    },
+    {
+      "id": "Q42",
+      "category": 3,
+      "difficulty": "medium",
+      "nl": "Find zones whose terminal unit has a zone air temperature sensor (mediated path)",
+      "sparql": "SELECT DISTINCT ?zone ?terminal ?s WHERE { ?terminal brick:feeds ?zone . ?zone a brick:HVAC_Zone . { ?terminal brick:hasPoint ?s } UNION { ?s brick:isPointOf ?terminal } . ?s a brick:Zone_Air_Temperature_Sensor }",
+      "expected": "non_empty",
+      "scope": [
+        "all"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "application": "control_zone_scoping"
+    },
+    {
+      "id": "Q43",
+      "category": 3,
+      "difficulty": "medium",
+      "nl": "Find AHUs serving lobby zones (spatial zone type constraint)",
+      "sparql": "SELECT DISTINCT ?ahu ?zone WHERE { ?zone a brick:HVAC_Zone . ?zone meta:zoneType \"lobby\" . ?ahu brick:feeds+ ?zone . ?ahu a brick:AHU }",
+      "expected": "non_empty",
+      "scope": [
+        "has_ahu",
+        "has_lobby"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "notes": "Tests A5: lobby on floor 1 only",
+      "application": "control_zone_scoping"
+    },
+    {
+      "id": "Q44",
+      "category": 3,
+      "difficulty": "medium",
+      "nl": "Find the AHU to terminal unit to zone service path",
+      "sparql": "SELECT DISTINCT ?ahu ?terminal ?zone WHERE { ?ahu a brick:AHU . ?ahu brick:feeds ?terminal . ?terminal brick:feeds ?zone . ?zone a brick:HVAC_Zone . { ?terminal a brick:VAV } UNION { ?terminal a brick:Fan_Coil_Unit } }",
+      "expected": "non_empty",
+      "scope": [
+        "has_ahu"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "application": "control_zone_scoping"
+    },
+    {
+      "id": "Q45",
+      "category": 3,
+      "difficulty": "medium",
+      "nl": "Find AHUs with both supply air and return air temperature sensors",
+      "sparql": "SELECT DISTINCT ?ahu WHERE { ?ahu a brick:AHU . { ?ahu brick:hasPoint ?ss } UNION { ?ss brick:isPointOf ?ahu } . ?ss a brick:Supply_Air_Temperature_Sensor . { ?ahu brick:hasPoint ?rs } UNION { ?rs brick:isPointOf ?ahu } . ?rs a brick:Return_Air_Temperature_Sensor . FILTER(?ss != ?rs) }",
+      "expected": "non_empty",
+      "scope": [
+        "has_ahu"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "application": "fdd_topology"
+    },
+    {
+      "id": "Q46",
+      "category": 3,
+      "difficulty": "medium",
+      "nl": "Find AHUs with both supply air flow and static pressure sensors",
+      "sparql": "SELECT DISTINCT ?ahu WHERE { ?ahu a brick:AHU . { ?ahu brick:hasPoint ?fs } UNION { ?fs brick:isPointOf ?ahu } . ?fs a brick:Supply_Air_Flow_Sensor . { ?ahu brick:hasPoint ?ps } UNION { ?ps brick:isPointOf ?ahu } . ?ps a brick:Supply_Air_Static_Pressure_Sensor . FILTER(?fs != ?ps) }",
+      "expected": "non_empty",
+      "scope": [
+        "has_ahu"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "application": "fdd_topology"
+    },
+    {
+      "id": "Q47",
+      "category": 3,
+      "difficulty": "medium",
+      "nl": "Find VAV boxes with supply air flow sensors (airflow measurement at terminal)",
+      "sparql": "SELECT DISTINCT ?vav ?s WHERE { ?vav a brick:VAV . { ?vav brick:hasPoint ?s } UNION { ?s brick:isPointOf ?vav } . ?s a brick:Supply_Air_Flow_Sensor }",
+      "expected": "non_empty",
+      "scope": [
+        "has_vav"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "application": "control_zone_scoping"
+    },
+    {
+      "id": "Q48",
+      "category": 3,
+      "difficulty": "medium",
+      "nl": "Find zones with both CO2 and occupancy sensors (demand-controlled ventilation candidate zones)",
+      "sparql": "SELECT DISTINCT ?zone WHERE { ?zone a brick:HVAC_Zone . { ?zone brick:hasPoint ?co2 } UNION { ?co2 brick:isPointOf ?zone } . { ?zone brick:hasPoint ?occ } UNION { ?occ brick:isPointOf ?zone } . ?co2 a brick:CO2_Sensor . ?occ a brick:Occupancy_Sensor . FILTER(?co2 != ?occ) }",
+      "expected": "non_empty",
+      "scope": [
+        "has_zone_sensors"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "application": "control_zone_scoping"
+    },
+    {
+      "id": "Q49",
+      "category": 3,
+      "difficulty": "medium",
+      "nl": "Find the chiller \u2192 CHW pump \u2192 AHU chain",
+      "sparql": "SELECT DISTINCT ?chiller ?pump ?ahu WHERE { ?chiller a brick:Chiller . ?chiller brick:feeds ?pump . ?pump a brick:Chilled_Water_Pump . ?pump brick:feeds ?ahu . ?ahu a brick:AHU }",
+      "expected": "non_empty",
+      "scope": [
+        "has_chiller"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "notes": "Tests A4: pump-inserted CHW loop",
+      "application": "fdd_topology"
+    },
+    {
+      "id": "Q50",
+      "category": 3,
+      "difficulty": "medium",
+      "nl": "Find VAV boxes with zone air temperature sensors (terminal-attachment pattern)",
+      "sparql": "SELECT DISTINCT ?vav ?zone ?s WHERE { ?vav a brick:VAV . ?vav brick:feeds ?zone . ?zone a brick:HVAC_Zone . { ?vav brick:hasPoint ?s } UNION { ?s brick:isPointOf ?vav } . ?s a brick:Zone_Air_Temperature_Sensor }",
+      "expected": "non_empty",
+      "scope": [
+        "has_vav",
+        "has_terminal_sensors"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "notes": "Tests the dominant real-world ZAT sensor attachment pattern: sensor on terminal, not on HVAC_Zone directly",
+      "application": "control_zone_scoping"
+    },
+    {
+      "id": "Q51",
+      "category": 4,
+      "difficulty": "medium",
+      "nl": "Count terminal units served by each AHU",
+      "sparql": "SELECT ?ahu (COUNT(DISTINCT ?t) AS ?n) WHERE { ?ahu a brick:AHU . ?ahu brick:feeds ?t . { ?t a brick:VAV } UNION { ?t a brick:Fan_Coil_Unit } } GROUP BY ?ahu HAVING (COUNT(DISTINCT ?t) > 0)",
+      "expected": "non_empty",
+      "scope": [
+        "has_ahu"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "application": "portfolio_analytics"
+    },
+    {
+      "id": "Q52",
+      "category": 4,
+      "difficulty": "medium",
+      "nl": "Count zones served by each AHU",
+      "sparql": "SELECT ?ahu (COUNT(DISTINCT ?zone) AS ?n) WHERE { ?ahu a brick:AHU . ?ahu brick:feeds+ ?zone . ?zone a brick:HVAC_Zone } GROUP BY ?ahu HAVING (COUNT(DISTINCT ?zone) > 0)",
+      "expected": "non_empty",
+      "scope": [
+        "has_ahu"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "application": "portfolio_analytics"
+    },
+    {
+      "id": "Q53",
+      "category": 4,
+      "difficulty": "medium",
+      "nl": "Count sensor points per AHU",
+      "sparql": "SELECT ?ahu (COUNT(DISTINCT ?s) AS ?n) WHERE { ?ahu a brick:AHU . { ?ahu brick:hasPoint ?s } UNION { ?s brick:isPointOf ?ahu } } GROUP BY ?ahu HAVING (COUNT(DISTINCT ?s) > 0)",
+      "expected": "non_empty",
+      "scope": [
+        "has_ahu"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "application": "sensor_coverage_audit"
+    },
+    {
+      "id": "Q54",
+      "category": 4,
+      "difficulty": "medium",
+      "nl": "Count zones that have at least one CO2 sensor",
+      "sparql": "SELECT (COUNT(DISTINCT ?zone) AS ?n) WHERE { ?zone a brick:HVAC_Zone . { ?zone brick:hasPoint ?s } UNION { ?s brick:isPointOf ?zone } . ?s a brick:CO2_Sensor } HAVING (COUNT(DISTINCT ?zone) > 0)",
+      "expected": "non_empty",
+      "scope": [
+        "has_zone_sensors"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "application": "sensor_coverage_audit"
+    },
+    {
+      "id": "Q55",
+      "category": 4,
+      "difficulty": "medium",
+      "nl": "Count total number of chillers in the building",
+      "sparql": "SELECT (COUNT(DISTINCT ?c) AS ?n) WHERE { ?c a brick:Chiller } HAVING (COUNT(DISTINCT ?c) > 0)",
+      "expected": "non_empty",
+      "scope": [
+        "has_chiller"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "application": "portfolio_analytics"
+    },
+    {
+      "id": "Q56",
+      "category": 4,
+      "difficulty": "medium",
+      "nl": "Count pumps (CHW and HW) that have a VFD",
+      "sparql": "SELECT (COUNT(DISTINCT ?p) AS ?n) WHERE { ?vfd a brick:Variable_Frequency_Drive . ?vfd brick:controls ?p . { ?p a brick:Chilled_Water_Pump } UNION { ?p a brick:Hot_Water_Pump } } HAVING (COUNT(DISTINCT ?p) > 0)",
+      "expected": "non_empty",
+      "scope": [
+        "has_plant"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "application": "portfolio_analytics"
+    },
+    {
+      "id": "Q57",
+      "category": 4,
+      "difficulty": "medium",
+      "nl": "Count sensors with timeseries reference IDs (building-wide ingestion coverage rate)",
+      "sparql": "SELECT (COUNT(DISTINCT ?s) AS ?n) WHERE { ?s ref:hasExternalReference ?ref . ?ref ref:hasTimeseriesId ?ts } HAVING (COUNT(DISTINCT ?s) > 0)",
+      "expected": "non_empty",
+      "scope": [
+        "all"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "application": "sensor_coverage_audit"
+    },
+    {
+      "id": "Q58",
+      "category": 4,
+      "difficulty": "medium",
+      "nl": "Count distinct zone types present in the building",
+      "sparql": "SELECT (COUNT(DISTINCT ?zt) AS ?n) WHERE { ?z a brick:HVAC_Zone . ?z meta:zoneType ?zt } HAVING (COUNT(DISTINCT ?zt) > 0)",
+      "expected": "non_empty",
+      "scope": [
+        "all"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "application": "portfolio_analytics"
+    },
+    {
+      "id": "Q59",
+      "category": 4,
+      "difficulty": "medium",
+      "nl": "Count sensor points per VAV terminal unit",
+      "sparql": "SELECT ?vav (COUNT(DISTINCT ?s) AS ?n) WHERE { ?vav a brick:VAV . { ?vav brick:hasPoint ?s } UNION { ?s brick:isPointOf ?vav } } GROUP BY ?vav HAVING (COUNT(DISTINCT ?s) > 0)",
+      "expected": "non_empty",
+      "scope": [
+        "has_vav"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "application": "sensor_coverage_audit"
+    },
+    {
+      "id": "Q60",
+      "category": 4,
+      "difficulty": "medium",
+      "nl": "Count terminal units broken down by type (VAV vs FCU)",
+      "sparql": "SELECT ?type (COUNT(DISTINCT ?t) AS ?n) WHERE { { ?t a brick:VAV . BIND(\"VAV\" AS ?type) } UNION { ?t a brick:Fan_Coil_Unit . BIND(\"FCU\" AS ?type) } } GROUP BY ?type HAVING (COUNT(DISTINCT ?t) > 0)",
+      "expected": "non_empty",
+      "scope": [
+        "has_ahu"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "application": "portfolio_analytics"
+    },
+    {
+      "id": "Q61",
+      "category": 5,
+      "difficulty": "hard",
+      "nl": "Find zones that share an AHU with a server room zone",
+      "sparql": "SELECT DISTINCT ?zone WHERE { ?ahu a brick:AHU . ?ahu brick:feeds+ ?srv . ?srv meta:zoneType \"server_room\" . ?ahu brick:feeds+ ?zone . ?zone a brick:HVAC_Zone . FILTER(?zone != ?srv) }",
+      "expected": "non_empty",
+      "scope": [
+        "has_server_room"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "notes": "Tests A1 (floor-band topology) \u2014 server rooms share AHU with nearby zones",
+      "application": "dr_baseline_scoping"
+    },
+    {
+      "id": "Q62",
+      "category": 5,
+      "difficulty": "hard",
+      "nl": "Find zones with BOTH a direct zone temperature sensor AND a terminal-mediated one",
+      "sparql": "SELECT DISTINCT ?zone WHERE { ?zone a brick:HVAC_Zone . { ?zone brick:hasPoint ?s1 } UNION { ?s1 brick:isPointOf ?zone } . ?s1 a brick:Zone_Air_Temperature_Sensor . ?terminal brick:feeds ?zone . { ?terminal brick:hasPoint ?s2 } UNION { ?s2 brick:isPointOf ?terminal } . ?s2 a brick:Zone_Air_Temperature_Sensor . FILTER(?s1 != ?s2) }",
+      "expected": "non_empty",
+      "scope": [
+        "has_zone_sensors"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "notes": "Only possible after A7; tests that both zone-level and terminal-level sensors coexist",
+      "application": "commissioning_gap"
+    },
+    {
+      "id": "Q63",
+      "category": 5,
+      "difficulty": "hard",
+      "nl": "Find AHUs with supply, return, and outside air temperature sensors (comprehensive FDD instrumentation check)",
+      "sparql": "SELECT DISTINCT ?ahu WHERE { ?ahu a brick:AHU . { ?ahu brick:hasPoint ?ss } UNION { ?ss brick:isPointOf ?ahu } . ?ss a brick:Supply_Air_Temperature_Sensor . { ?ahu brick:hasPoint ?rs } UNION { ?rs brick:isPointOf ?ahu } . ?rs a brick:Return_Air_Temperature_Sensor . { ?ahu brick:hasPoint ?os } UNION { ?os brick:isPointOf ?ahu } . ?os a brick:Outside_Air_Temperature_Sensor . FILTER(?ss != ?rs && ?rs != ?os && ?ss != ?os) }",
+      "expected": "non_empty",
+      "scope": [
+        "has_ahu"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "application": "commissioning_gap"
+    },
+    {
+      "id": "Q64",
+      "category": 5,
+      "difficulty": "hard",
+      "nl": "Find the full chiller \u2192 pump \u2192 AHU \u2192 terminal \u2192 zone path",
+      "sparql": "SELECT DISTINCT ?chiller ?zone WHERE { ?chiller a brick:Chiller . ?chiller brick:feeds ?pump . ?pump a brick:Chilled_Water_Pump . ?pump brick:feeds ?ahu . ?ahu a brick:AHU . ?ahu brick:feeds ?terminal . ?terminal brick:feeds ?zone . ?zone a brick:HVAC_Zone }",
+      "expected": "non_empty",
+      "scope": [
+        "has_chiller"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "notes": "4-hop path; requires both A3 and A4",
+      "application": "dr_baseline_scoping"
+    },
+    {
+      "id": "Q65",
+      "category": 5,
+      "difficulty": "hard",
+      "nl": "Find zones reachable from any chiller that have an occupancy sensor",
+      "sparql": "SELECT DISTINCT ?zone ?s WHERE { ?chiller a brick:Chiller . ?chiller brick:feeds+ ?zone . ?zone a brick:HVAC_Zone . { ?zone brick:hasPoint ?s } UNION { ?s brick:isPointOf ?zone } . ?s a brick:Occupancy_Sensor }",
+      "expected": "non_empty",
+      "scope": [
+        "has_chiller",
+        "has_zone_sensors"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "notes": "5-hop traversal testing full graph connectivity",
+      "application": "dr_baseline_scoping"
+    },
+    {
+      "id": "Q66",
+      "category": 5,
+      "difficulty": "hard",
+      "nl": "Find HVAC zones missing a direct zone temperature sensor (commissioning coverage gap)",
+      "sparql": "SELECT DISTINCT ?zone WHERE { ?zone a brick:HVAC_Zone . FILTER NOT EXISTS { { ?zone brick:hasPoint ?s } UNION { ?s brick:isPointOf ?zone } . ?s a brick:Zone_Air_Temperature_Sensor } }",
+      "expected": "non_empty",
+      "scope": [
+        "all"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "notes": "Informational: sparse-density buildings have some zones without sensors; tests NOT EXISTS pattern",
+      "application": "commissioning_gap"
+    },
+    {
+      "id": "Q67",
+      "category": 5,
+      "difficulty": "hard",
+      "nl": "Find sensors that have timeseries references AND whose equipment also has setpoints",
+      "sparql": "SELECT DISTINCT ?equip ?sensor ?sp WHERE { { ?equip brick:hasPoint ?sensor } UNION { ?sensor brick:isPointOf ?equip } . ?sensor ref:hasExternalReference ?ref . ?ref ref:hasTimeseriesId ?ts . { ?equip brick:hasPoint ?sp } UNION { ?sp brick:isPointOf ?equip } . { ?sp a brick:Zone_Air_Cooling_Temperature_Setpoint } UNION { ?sp a brick:Supply_Air_Temperature_Setpoint } UNION { ?sp a brick:Chilled_Water_Supply_Temperature_Setpoint } }",
+      "expected": "non_empty",
+      "scope": [
+        "all"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "notes": "Tests co-occurrence of timeseries refs and setpoints on same equipment",
+      "application": "commissioning_gap"
+    },
+    {
+      "id": "Q68",
+      "category": 5,
+      "difficulty": "hard",
+      "nl": "Find timeseries identifiers for sensors on VAV terminal units",
+      "sparql": "SELECT DISTINCT ?vav ?s ?ts WHERE { ?vav a brick:VAV . { ?vav brick:hasPoint ?s } UNION { ?s brick:isPointOf ?vav } . ?s ref:hasExternalReference ?ref . ?ref ref:hasTimeseriesId ?ts }",
+      "expected": "non_empty",
+      "scope": [
+        "has_vav"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "application": "timeseries_ingestion"
+    },
+    {
+      "id": "Q69",
+      "category": 5,
+      "difficulty": "hard",
+      "nl": "Find equipment that has control setpoints but no enable/disable command (commissioning completeness gap)",
+      "sparql": "SELECT DISTINCT ?equip WHERE { { ?equip brick:hasPoint ?sp } UNION { ?sp brick:isPointOf ?equip } . { ?sp a brick:Zone_Air_Cooling_Temperature_Setpoint } UNION { ?sp a brick:Chilled_Water_Supply_Temperature_Setpoint } . FILTER NOT EXISTS { { ?equip brick:hasPoint ?cmd } UNION { ?cmd brick:isPointOf ?equip } . ?cmd a brick:Enable_Command } }",
+      "expected": "non_empty",
+      "scope": [
+        "all"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "notes": "Tests NOT EXISTS + UNION; expects VAV boxes (have setpoints, no enable command)",
+      "application": "commissioning_gap"
+    },
+    {
+      "id": "Q70",
+      "category": 5,
+      "difficulty": "hard",
+      "nl": "Find all sensor points reachable from a chiller within two feeds hops",
+      "sparql": "SELECT DISTINCT ?chiller ?equip ?s WHERE { ?chiller a brick:Chiller . ?chiller brick:feeds+ ?equip . { ?equip brick:hasPoint ?s } UNION { ?s brick:isPointOf ?equip } }",
+      "expected": "non_empty",
+      "scope": [
+        "has_chiller"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "application": "dr_baseline_scoping"
+    },
+    {
+      "id": "Q71",
+      "category": 5,
+      "difficulty": "hard",
+      "nl": "Find zones served by FCUs where the FCU is also fed by a chiller (hotel CHW pattern)",
+      "sparql": "SELECT DISTINCT ?zone ?fcu ?chiller WHERE { ?chiller a brick:Chiller . ?chiller brick:feeds+ ?fcu . ?fcu a brick:Fan_Coil_Unit . ?fcu brick:feeds ?zone . ?zone a brick:HVAC_Zone }",
+      "expected": "non_empty",
+      "scope": [
+        "has_fcu",
+        "has_chiller"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "notes": "Tests full A3 path: chiller \u2192 FCU \u2192 zone",
+      "application": "dr_baseline_scoping"
+    },
+    {
+      "id": "Q72",
+      "category": 5,
+      "difficulty": "hard",
+      "nl": "Find AHUs whose terminal units have both timeseries sensors and temperature setpoints",
+      "sparql": "SELECT DISTINCT ?ahu ?terminal WHERE { ?ahu a brick:AHU . ?ahu brick:feeds ?terminal . { ?terminal a brick:VAV } UNION { ?terminal a brick:Fan_Coil_Unit } . { ?terminal brick:hasPoint ?s } UNION { ?s brick:isPointOf ?terminal } . ?s ref:hasExternalReference ?ref . ?ref ref:hasTimeseriesId ?ts . { ?terminal brick:hasPoint ?sp } UNION { ?sp brick:isPointOf ?terminal } . { ?sp a brick:Zone_Air_Cooling_Temperature_Setpoint } UNION { ?sp a brick:Zone_Air_Heating_Temperature_Setpoint } . FILTER(?s != ?sp) }",
+      "expected": "non_empty",
+      "scope": [
+        "has_ahu"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "application": "commissioning_gap"
+    },
+    {
+      "id": "Q73",
+      "category": 5,
+      "difficulty": "hard",
+      "nl": "Find timeseries IDs for all zone CO2 sensors",
+      "sparql": "SELECT DISTINCT ?zone ?s ?ts WHERE { ?zone a brick:HVAC_Zone . { ?zone brick:hasPoint ?s } UNION { ?s brick:isPointOf ?zone } . ?s a brick:CO2_Sensor . ?s ref:hasExternalReference ?ref . ?ref ref:hasTimeseriesId ?ts }",
+      "expected": "non_empty",
+      "scope": [
+        "has_zone_sensors"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "notes": "3-hop: zone \u2192 CO2 sensor \u2192 timeseries ref \u2192 ID",
+      "application": "timeseries_ingestion"
+    },
+    {
+      "id": "Q74",
+      "category": 5,
+      "difficulty": "hard",
+      "nl": "Find zones with BOTH zone-level setpoints and terminal-level setpoints",
+      "sparql": "SELECT DISTINCT ?zone WHERE { ?zone a brick:HVAC_Zone . { ?zone brick:hasPoint ?zsp } UNION { ?zsp brick:isPointOf ?zone } . { ?zsp a brick:Zone_Air_Cooling_Temperature_Setpoint } UNION { ?zsp a brick:Zone_Air_Heating_Temperature_Setpoint } . ?terminal brick:feeds ?zone . { ?terminal brick:hasPoint ?tsp } UNION { ?tsp brick:isPointOf ?terminal } . { ?tsp a brick:Zone_Air_Cooling_Temperature_Setpoint } UNION { ?tsp a brick:Zone_Air_Heating_Temperature_Setpoint } }",
+      "expected": "non_empty",
+      "scope": [
+        "has_zone_sensors"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "notes": "Tests dual-level setpoint attachment (zone-direct + terminal-mediated)",
+      "application": "commissioning_gap"
+    },
+    {
+      "id": "Q75",
+      "category": 5,
+      "difficulty": "hard",
+      "nl": "Find chiller path to zones with timeseries sensors on terminal units",
+      "sparql": "SELECT DISTINCT ?chiller ?zone ?ts WHERE { ?chiller a brick:Chiller . ?chiller brick:feeds+ ?ahu . ?ahu a brick:AHU . ?ahu brick:feeds ?terminal . ?terminal brick:feeds ?zone . ?zone a brick:HVAC_Zone . { ?terminal brick:hasPoint ?s } UNION { ?s brick:isPointOf ?terminal } . ?s ref:hasExternalReference ?ref . ?ref ref:hasTimeseriesId ?ts }",
+      "expected": "non_empty",
+      "scope": [
+        "has_chiller"
+      ],
+      "modes": [
+        "brick",
+        "mixed"
+      ],
+      "notes": "5-hop traversal ending with timeseries sensor on terminal; tests full graph connectivity with timeseries integration",
+      "application": "dr_baseline_scoping"
+    }
+  ]
+}
