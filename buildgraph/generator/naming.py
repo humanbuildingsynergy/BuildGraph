@@ -3,7 +3,7 @@ from rdflib import URIRef, Namespace
 
 _VINTAGE_TOKENS = {"pre1980", "ashrae2004", "ashrae2013"}
 _VINTAGE_CLEAN  = {"pre1980": "pre1980", "ashrae2004": "2004", "ashrae2013": "2013"}
-_MODE_TOKENS    = {"brick", "s223", "mixed"}
+_MODE_TOKENS    = {"brick"}
 
 
 def building_id(archetype_name: str, seed: int) -> str:
@@ -13,10 +13,9 @@ def building_id(archetype_name: str, seed: int) -> str:
     Examples:
       BG_hospital_2013_0002
       BG_medium_office_pre1980_0042
-      BG_hotel_vrf_2004_0000
     """
     parts = archetype_name.split("_")
-    # Strip ontology-mode suffix (brick / s223 / mixed)
+    # Strip ontology-mode suffix (brick)
     if parts and parts[-1] in _MODE_TOKENS:
         parts = parts[:-1]
     # Locate vintage token

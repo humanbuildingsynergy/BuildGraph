@@ -181,15 +181,7 @@ def benchmark_file(
     no_meta: bool = False,
 ) -> list[dict]:
     """Run all applicable queries against one TTL file. Returns list of result rows."""
-    # Infer mode from path if not forced
-    file_mode = mode
-    if file_mode is None:
-        for part in ttl_path.parts:
-            if part in ("brick", "s223", "mixed"):
-                file_mode = part
-                break
-        if file_mode is None:
-            file_mode = "brick"  # fallback
+    file_mode = mode or "brick"
 
     tier = _infer_tier(ttl_path)
 
@@ -263,7 +255,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Run BuildGraph SPARQL benchmark")
     parser.add_argument("--input",   type=Path, required=True,  help="TTL file or directory of TTL files")
     parser.add_argument("--output",  type=Path, default=_DEFAULT_OUT, help="Output CSV path")
-    parser.add_argument("--mode",    choices=["brick", "s223", "mixed"], help="Force ontology mode")
+    parser.add_argument("--mode",    choices=["brick"], help="Force ontology mode (always brick)")
     parser.add_argument("--verbose", action="store_true", help="Print per-query results")
     parser.add_argument("--inference", action="store_true",
         help="Apply Brick 1.3 equivalentClass normalization before querying "

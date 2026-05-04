@@ -1,7 +1,7 @@
 from dataclasses import replace
 from typing import Iterator
 
-from .base import BuildingArchetype, OntologyMode
+from .base import BuildingArchetype
 from .doe_office import OFFICE_ARCHETYPES
 from .doe_school import SCHOOL_ARCHETYPES
 from .doe_hospital import HOSPITAL_ARCHETYPES
@@ -14,14 +14,8 @@ _BASE_ARCHETYPES: list[BuildingArchetype] = (
     + HOTEL_ARCHETYPES + RETAIL_ARCHETYPES + HEALTHCARE_ARCHETYPES
 )
 
-_MODES: tuple[OntologyMode, ...] = ("brick", "s223", "mixed")
-
-
 def _expand(base: BuildingArchetype) -> list[BuildingArchetype]:
-    return [
-        replace(base, ontology_mode=m, name=f"{base.name}_{m}")
-        for m in _MODES
-    ]
+    return [replace(base, ontology_mode="brick", name=f"{base.name}_brick")]
 
 
 ARCHETYPES: dict[str, BuildingArchetype] = {
@@ -45,7 +39,7 @@ def list_base_names() -> list[str]:
 
 def iter_archetypes(
     base_names: list[str] | None = None,
-    modes: list[OntologyMode] | None = None,
+    modes: list[str] | None = None,
 ) -> Iterator[BuildingArchetype]:
     for archetype in ARCHETYPES.values():
         base = archetype.name.rsplit("_", 1)[0]

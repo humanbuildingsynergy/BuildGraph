@@ -231,7 +231,7 @@ def archetype_to_spec(
     )
 
     _name_parts = archetype.name.split("_")
-    if _name_parts[-1] in {"brick", "s223", "mixed"}:
+    if _name_parts[-1] in {"brick"}:
         _name_parts = _name_parts[:-1]
     _vi = next(
         (i for i, p in enumerate(_name_parts) if p in {"pre1980", "2004", "2013"}),
