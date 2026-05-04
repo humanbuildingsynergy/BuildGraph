@@ -105,7 +105,7 @@ Results stratified by building complexity tier (120 buildings, Brick mode):
 | T3 Advanced | large_office, hospital/outpatient (pre1980/2004) | 92.9% |
 | T4 Smart | hospital/hotel/outpatient 2013 | 96.5% |
 
-For comparison, 59 publicly available real-world Brick building files (44 from the Mortar platform, 4 from the BuildingQA benchmark, and 11 additional community files) achieve an aggregate QAR of 35.8% on the same benchmark.
+For comparison, 58 publicly available real-world Brick building files (44 from the Mortar platform, 2 from the BuildingQA benchmark, and 12 from the Brick Schema community) achieve an aggregate QAR of 35.6% on the same benchmark.
 
 **QAR (Query Answerability Rate):** fraction of applicable queries returning ≥1 result row. Queries out of scope for a building (e.g., chiller queries on packaged-unit buildings) are excluded from the denominator.
 
